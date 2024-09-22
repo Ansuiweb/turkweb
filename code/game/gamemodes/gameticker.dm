@@ -201,13 +201,10 @@ var/turf/MiniSpawn
 	if (!src.mode.can_start())
 		//world << "<B>Unable to start [mode.name].</B> Not enough victims, [mode.required_players] victims are required. Reverting to pre-simulation lobby."
 		var/baron = "badmood"
-		var/inquisitor = "badmood"
 		var/merchant = "badmood"
 		for(var/mob/new_player/NN in player_list)
 			if(NN.client.work_chosen == "Baron" && NN.ready)
 				baron = "hit"
-			else if(NN.client.work_chosen == "Inquisitor" && NN.ready)
-				inquisitor = "hit"
 			else if(NN.client.work_chosen == "Merchant" && NN.ready)
 				merchant = "hit"
 
