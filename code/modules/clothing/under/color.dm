@@ -170,13 +170,13 @@
 		var/color2 = "#ffffff"
 		var/icon/migover
 		if(user?.gender == FEMALE)
-			mob = new/icon("icon" = 'icons/mob/uniform_f.dmi', "icon_state" = "migrant")
+			mob = new/icon("icon" = 'icons/mob/uniform_f.dmi', "icon_state" = "migrant_s")
 			migover	= icon("icon" = 'icons/mob/uniform_f.dmi', "icon_state" = "migover")
 		else if(FAT in user?.mutations)
 			mob = new/icon("icon" = 'icons/mob/uniform_fat.dmi', "icon_state" = "migrant")
 			migover	= icon("icon" = 'icons/mob/uniform_fat.dmi', "icon_state" = "migover")
 		else
-			mob = new/icon("icon" = 'icons/mob/uniform.dmi', "icon_state" = "migrant")
+			mob = new/icon("icon" = 'icons/mob/uniform.dmi', "icon_state" = "migrant_s")
 			migover	= icon("icon" = 'icons/mob/uniform.dmi', "icon_state" = "migover")
 		mob.SwapColor(color2,maincolor)
 		mob.SwapColor(color1,secondcolor)
