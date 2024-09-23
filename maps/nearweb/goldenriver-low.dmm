@@ -157,9 +157,17 @@
 /turf/simulated/floor/plating/magmareal,
 /area/dunwell/station/miser/airy5)
 "aaC" = (
-/obj/machinery/redemption_machine,
-/turf/simulated/floor/lifeweb/newbar,
-/area/dunwell/station/miser/airy5)
+/obj/structure/rack/lwtable/reinftable/horizontal{
+	dir = 4;
+	icon_state = "table_horizontal2"
+	},
+/obj/item/storage/fancy/cigarettes,
+/obj/machinery/light/small/mijadablue,
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
+	},
+/area/dunwell/station/brothel)
 "aaD" = (
 /obj/structure/grille/reinforced/bars,
 /turf/simulated/floor/lifeweb/cerb,
@@ -4653,7 +4661,6 @@
 	icon_state = "wood_1tileendtable";
 	narrow = 1
 	},
-/obj/item/clothing/mask/cigarette,
 /turf/simulated/floor/lifeweb{
 	dir = 8;
 	icon_state = "bar3"
@@ -4665,19 +4672,27 @@
 	icon_state = "wood_1tilethick";
 	narrow = 1
 	},
-/obj/item/cloaking_device/brothel,
-/obj/item/cloaking_device/brothel,
+/obj/item/cloaking_device/brothel{
+	pixel_x = -8
+	},
+/obj/item/cloaking_device/brothel{
+	pixel_x = 8
+	},
 /turf/simulated/floor/lifeweb{
 	dir = 9;
 	icon_state = "F7"
 	},
 /area/dunwell/station/brothel)
 "ans" = (
-/obj/item/cloaking_device/brothel,
-/obj/item/cloaking_device/brothel,
 /obj/structure/rack/lwtable/table10end{
 	dir = 8;
 	icon_state = "wood_1tileendtable"
+	},
+/obj/item/cloaking_device/brothel{
+	pixel_x = -8
+	},
+/obj/item/cloaking_device/brothel{
+	pixel_x = 8
 	},
 /turf/simulated/floor/lifeweb{
 	dir = 8;
@@ -4961,7 +4976,10 @@
 "aoh" = (
 /obj/structure/rack/lwtable/table10end,
 /obj/item/desfibrilador,
-/turf/simulated/floor/lifeweb/cerb,
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
+	},
 /area/dunwell/station/brothel)
 "aoi" = (
 /obj/structure/rack/lwtable/table1,
@@ -4972,33 +4990,52 @@
 /obj/machinery/lwvend/onion{
 	pixel_y = 32
 	},
-/turf/simulated/floor/lifeweb/cerb,
+/turf/simulated/floor/lifeweb{
+	dir = 1;
+	icon_state = "brothel"
+	},
 /area/dunwell/station/brothel)
 "aok" = (
 /obj/effect/landmark/start{
 	name = "Pusher"
 	},
-/turf/simulated/floor/lifeweb/cerb,
+/turf/simulated/floor/lifeweb{
+	dir = 4;
+	icon_state = "brothel"
+	},
 /area/dunwell/station/brothel)
 "aol" = (
 /obj/structure/stool/bed/chair/comfy/black{
 	dir = 1;
 	icon_state = "comfychair_black"
 	},
-/turf/simulated/floor/lifeweb/cerb,
+/turf/simulated/floor/lifeweb{
+	icon_state = "brothel"
+	},
 /area/dunwell/station/brothel)
 "aom" = (
 /obj/structure/lifeweb/statue/green4,
-/turf/simulated/floor/lifeweb/cerb,
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
+	},
 /area/dunwell/station/brothel)
 "aon" = (
 /obj/structure/stool/bed/pigbed,
 /turf/simulated/floor/lifeweb/cerb,
 /area/dunwell/station/brothel)
 "aoo" = (
-/obj/structure/rack/lwtable/reinftable/middle,
-/obj/item/kitchen/utensil/knife,
-/turf/simulated/floor/lifeweb/cerb,
+/obj/structure/rack/lwtable/table10end{
+	dir = 1;
+	icon_state = "wood_1tileendtable"
+	},
+/obj/item/device/rim_card,
+/obj/item/device/rim_card,
+/obj/item/device/rim_card,
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
+	},
 /area/dunwell/station/brothel)
 "aop" = (
 /turf/simulated/wall/r_wall/keep/_2{
@@ -5180,7 +5217,10 @@
 /obj/item/kitchen/utensil/spoon,
 /obj/item/reagent_containers/glass/bottle/beer,
 /obj/item/flame/lighter/zippo,
-/turf/simulated/floor/lifeweb/cerb,
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
+	},
 /area/dunwell/station/brothel)
 "aoN" = (
 /obj/structure/door_protect{
@@ -5205,12 +5245,11 @@
 	},
 /area/dunwell/village)
 "aoQ" = (
-/obj/structure/rack/lwtable/reinftable/middle{
-	dir = 1;
-	icon_state = "reinf_table4"
+/obj/structure/rack/lwtable/reinftable/horizontal,
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
 	},
-/obj/item/kitchen/utensil/knife/switchblade,
-/turf/simulated/floor/lifeweb/cerb,
 /area/dunwell/station/brothel)
 "aoR" = (
 /turf/simulated/wall/r_wall/keep/_2{
@@ -5440,11 +5479,12 @@
 	},
 /area/dunwell/station)
 "apy" = (
-/obj/structure/rack/lwtable/reinftable/end{
-	narrow = 1
+/obj/structure/rack/lwtable/reinftable/horizontal,
+/obj/item/kitchen/utensil/knife/combat,
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
 	},
-/obj/item/storage/fancy/cigarettes,
-/turf/simulated/floor/lifeweb/cerb,
 /area/dunwell/station/brothel)
 "apz" = (
 /obj/structure/lfwindow/stonewindow,
@@ -5629,11 +5669,10 @@
 	},
 /area/dunwell/station/lifeweb)
 "apX" = (
-/obj/structure/rack/lwtable/table10end,
-/obj/item/device/cellphone,
-/obj/item/device/cellphone,
-/obj/item/device/cellphone,
-/turf/simulated/floor/lifeweb/cerb,
+/turf/simulated/floor/lifeweb{
+	dir = 1;
+	icon_state = "brothel"
+	},
 /area/dunwell/station/brothel)
 "apY" = (
 /turf/simulated/wall/r_wall/cave/white/hard/surface,
@@ -5646,15 +5685,9 @@
 	},
 /area/dunwell/station/consyte)
 "aqa" = (
-/obj/structure/rack/lwtable/reinftable{
-	narrow = 1
-	},
-/obj/structure/door_protect{
-	dir = 4;
-	icon_state = "door_open"
-	},
-/turf/simulated/floor/lifeweb/newbar,
-/area/dunwell/station/brothel)
+/obj/effect/decal/cleanable/poo/old,
+/turf/simulated/floor/lifeweb/plaza,
+/area/dunwell/station/miser/airy5)
 "aqb" = (
 /obj/multiz/stairs/active/wood,
 /turf/simulated/floor/lifeweb{
@@ -6226,19 +6259,25 @@
 /turf/simulated/wall/stone,
 /area/dunwell/station/smith)
 "ary" = (
-/obj/structure/rack/lwtable/table10end{
-	dir = 1;
-	icon_state = "wood_1tileendtable"
+/obj/structure/rack/lwtable/table10end,
+/obj/item/device/cellphone,
+/obj/item/device/cellphone,
+/obj/machinery/light/small/mijadablue/weak{
+	dir = 8
 	},
-/obj/item/device/rim_card,
-/obj/item/device/rim_card,
-/obj/item/device/rim_card,
-/turf/simulated/floor/lifeweb/cerb,
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
+	},
 /area/dunwell/station/brothel)
 "arz" = (
-/obj/machinery/light/small/mijadablue,
-/turf/simulated/floor/lifeweb/cerb,
-/area/dunwell/station/brothel)
+/obj/structure/aibots,
+/obj/item/condom/big,
+/obj/effect/decal/cleanable/cum,
+/turf/simulated/floor/lifeweb/stone{
+	icon_state = "66"
+	},
+/area/dunwell/station/miser/airy5)
 "arA" = (
 /obj/structure/rack/lwtable/table3,
 /obj/item/flame/candle,
@@ -6362,13 +6401,12 @@
 	},
 /area/dunwell/station/smith)
 "arS" = (
-/obj/machinery/door/airlock/brothel{
-	name = "Pusher's Den";
-	req_access_txt = "152";
-	req_one_access_txt = "152"
+/obj/effect/decal/cleanable/poo,
+/obj/item/reagent_containers/food/snacks/poo,
+/turf/simulated/floor/lifeweb/stone{
+	icon_state = "66"
 	},
-/turf/simulated/floor/lifeweb/newbar,
-/area/dunwell/station/brothel)
+/area/dunwell/station/miser/airy5)
 "arT" = (
 /obj/structure/anvil,
 /turf/simulated/floor/lifeweb/stone{
@@ -16942,6 +16980,15 @@
 /turf/simulated/floor/lifeweb/newbar,
 /area/dunwell/station/hydro)
 "aVp" = (
+/obj/structure/lifeweb/s_stone/xss{
+	dir = 4
+	},
+/obj/structure/lifeweb/statue/green2{
+	desc = "Sturdy logs whose pointy ends are aimed directly to the skies. You better hope you're in the correct side.";
+	dir = 4;
+	icon_state = "fence";
+	name = "wooden  barricade"
+	},
 /turf/simulated/floor/lifeweb/newbar2{
 	dir = 4;
 	icon_state = "newbar2"
@@ -17134,6 +17181,12 @@
 	dir = 4;
 	icon_state = "aborder1"
 	},
+/obj/structure/lifeweb/statue/green2{
+	desc = "Sturdy logs whose pointy ends are aimed directly to the skies. You better hope you're in the correct side.";
+	dir = 4;
+	icon_state = "fence";
+	name = "wooden  barricade"
+	},
 /turf/simulated/floor/lifeweb/newbar2{
 	dir = 4;
 	icon_state = "newbar2"
@@ -17307,6 +17360,12 @@
 /obj/effect/landmark/start{
 	name = "Soiler"
 	},
+/obj/structure/lifeweb/statue/green2{
+	desc = "Sturdy logs whose pointy ends are aimed directly to the skies. You better hope you're in the correct side.";
+	dir = 4;
+	icon_state = "fence";
+	name = "wooden  barricade"
+	},
 /turf/simulated/floor/lifeweb/newbar2{
 	dir = 4;
 	icon_state = "newbar2"
@@ -17452,6 +17511,12 @@
 	icon_state = "aborder1"
 	},
 /obj/structure/aibots,
+/obj/structure/lifeweb/statue/green2{
+	desc = "Sturdy logs whose pointy ends are aimed directly to the skies. You better hope you're in the correct side.";
+	dir = 4;
+	icon_state = "fence";
+	name = "wooden  barricade"
+	},
 /turf/simulated/floor/lifeweb/newbar2{
 	dir = 4;
 	icon_state = "newbar2"
@@ -17901,13 +17966,12 @@
 	},
 /area/dunwell/station/hydro)
 "aZg" = (
-/obj/structure/lifeweb/s_stone/xsd{
-	dir = 8;
-	icon_state = "aborder1"
-	},
 /obj/structure/lifeweb/s_stone/xss{
 	dir = 8;
 	icon_state = "aborder2"
+	},
+/obj/effect/landmark{
+	name = "regurgitator"
 	},
 /turf/simulated/floor/lifeweb/newbar2{
 	dir = 8;
@@ -17915,13 +17979,10 @@
 	},
 /area/dunwell/station/hydro)
 "aZh" = (
-/obj/structure/lifeweb/s_stone/xsd{
+/obj/structure/lifeweb/s_stone/xss,
+/turf/simulated/floor/lifeweb/newbar2{
 	dir = 4;
-	icon_state = "aborder1"
-	},
-/turf/simulated/floor/lifeweb{
-	dir = 1;
-	icon_state = "23"
+	icon_state = "newbar2"
 	},
 /area/dunwell/station/hydro)
 "aZi" = (
@@ -18082,9 +18143,15 @@
 /area/dunwell/station/medbay)
 "aZM" = (
 /obj/structure/lifeweb/s_stone/xss,
-/turf/simulated/floor/lifeweb{
+/obj/structure/lifeweb/statue/green2{
+	desc = "Sturdy logs whose pointy ends are aimed directly to the skies. You better hope you're in the correct side.";
 	dir = 4;
-	icon_state = "23"
+	icon_state = "fence";
+	name = "wooden  barricade"
+	},
+/turf/simulated/floor/lifeweb/newbar2{
+	dir = 4;
+	icon_state = "newbar2"
 	},
 /area/dunwell/station/hydro)
 "aZN" = (
@@ -18197,6 +18264,7 @@
 	dir = 8;
 	icon_state = "torchwall0"
 	},
+/obj/effect/decal/cleanable/cum,
 /turf/simulated/floor/lifeweb/stone{
 	icon_state = "1,2"
 	},
@@ -19817,9 +19885,6 @@
 	dir = 8;
 	icon_state = "railing";
 	plane = 0
-	},
-/obj/effect/landmark{
-	name = "regurgitator"
 	},
 /turf/simulated/floor/lifeweb/newbar2{
 	dir = 4;
@@ -22655,9 +22720,11 @@
 /turf/simulated/floor/lifeweb/cerb2,
 /area/dunwell/station)
 "bnX" = (
-/obj/structure/grille/reinforced/l/southeast,
-/turf/simulated/floor/lifeweb/cerb2,
-/area/dunwell/station)
+/obj/structure/lifeweb/s_stone/xsd,
+/turf/simulated/floor/lifeweb/newbar{
+	dir = 5
+	},
+/area/dunwell/station/hydro)
 "bnY" = (
 /obj/structure/rack/lwtable/table10end,
 /turf/simulated/floor/lifeweb/newbar,
@@ -23479,9 +23546,7 @@
 	},
 /area/dunwell/station/bridge)
 "bqR" = (
-/obj/structure/rack/lwtable/reinftable/horizontal{
-	narrow = 1
-	},
+/obj/structure/rack/lwtable/reinftable/horizontal,
 /turf/simulated/floor/lifeweb/wood/nf22{
 	dir = 10;
 	icon_state = "nf22"
@@ -30300,13 +30365,14 @@
 	dir = 8;
 	icon_state = "sink"
 	},
+/obj/effect/decal/cleanable/cum,
 /turf/simulated/floor/lifeweb{
 	icon_state = "nfloorz"
 	},
 /area/dunwell/station/residential)
 "bSL" = (
 /turf/simulated/floor/lifeweb{
-	dir = 8;
+	dir = 10;
 	icon_state = "nfloorz"
 	},
 /area/dunwell/station/residential)
@@ -30384,6 +30450,9 @@
 /area/dunwell/station)
 "bTm" = (
 /obj/item/shovel,
+/obj/effect/landmark{
+	name = "NPCBum"
+	},
 /turf/simulated/floor/lifeweb{
 	icon_state = "wf2"
 	},
@@ -33522,6 +33591,8 @@
 /area/dunwell/station/church/bishopoffice)
 "ciC" = (
 /obj/structure/closet/lwfb/wooden,
+/obj/item/condom_wrapper/small,
+/obj/item/ammo_magazine/external/mc9mm,
 /turf/simulated/floor/lifeweb/wood/wooddaarkkk,
 /area/dunwell/station/church/bishopoffice)
 "ciD" = (
@@ -34095,6 +34166,17 @@
 	icon_state = "os2"
 	},
 /area/dunwell/artemis)
+"cGi" = (
+/obj/machinery/door/airlock/brothel{
+	name = "Pusher's Den";
+	req_access_txt = "152";
+	req_one_access_txt = "152"
+	},
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
+	},
+/area/dunwell/station/brothel)
 "cHo" = (
 /obj/machinery/light/small/red{
 	dir = 1;
@@ -34201,6 +34283,10 @@
 	},
 /turf/simulated/floor/lifeweb/soulbreaker,
 /area/dunwell/station/soulbreaker)
+"cQR" = (
+/obj/machinery/redemption_machine,
+/turf/simulated/floor/lifeweb/cerb,
+/area/dunwell/station/brothel)
 "cRv" = (
 /turf/simulated/floor/lifeweb/surgery{
 	dir = 4;
@@ -34234,6 +34320,11 @@
 /obj/item/clothing/mask/breath/medical,
 /turf/simulated/floor/lifeweb/polar,
 /area/dunwell/surface)
+"cTf" = (
+/turf/simulated/floor/lifeweb/cerb{
+	dir = 4
+	},
+/area/dunwell/station/brothel)
 "cTJ" = (
 /obj/structure/device/piano,
 /turf/simulated/floor/plating/dirt,
@@ -35562,6 +35653,12 @@
 	},
 /turf/simulated/floor/plating/snow,
 /area/dunwell/realsurface)
+"fcE" = (
+/turf/simulated/floor/lifeweb/cerb{
+	dir = 8;
+	icon_state = "nfloorz"
+	},
+/area/dunwell/station/brothel)
 "fdo" = (
 /obj/structure/sign/signnew/web{
 	dir = 1;
@@ -35711,6 +35808,13 @@
 	icon_state = "23b"
 	},
 /area/dunwell/miscplaces)
+"foG" = (
+/obj/item/condom/big,
+/turf/simulated/floor/lifeweb/stone{
+	dir = 9;
+	icon_state = "stonefloor"
+	},
+/area/dunwell/station/miser/airy5)
 "foW" = (
 /obj/structure/sign/signnew/web/friendly_face,
 /turf/simulated/wall/r_wall/metal,
@@ -36202,6 +36306,10 @@
 	},
 /turf/simulated/floor/lifeweb/nfloorz2,
 /area/dunwell/station/bridge)
+"gmA" = (
+/obj/effect/decal/cleanable/cum,
+/turf/simulated/floor/lifeweb/wood/wooddaarkkk,
+/area/dunwell/station/church/bishopoffice)
 "gmR" = (
 /obj/structure/stool/bed/chair/comfy/brown{
 	dir = 8;
@@ -36733,6 +36841,11 @@
 	icon_state = "ldamaged1"
 	},
 /area/dunwell/realsurface)
+"hld" = (
+/turf/simulated/floor/lifeweb{
+	icon_state = "brothel"
+	},
+/area/dunwell/station/brothel)
 "hmv" = (
 /turf/simulated/floor/lifeweb/lev{
 	dir = 4;
@@ -36791,6 +36904,11 @@
 	icon_state = "carpbet2side"
 	},
 /area/dunwell/station/soulbreaker)
+"hyQ" = (
+/turf/simulated/floor/lifeweb/cerb{
+	dir = 1
+	},
+/area/dunwell/station/brothel)
 "hBq" = (
 /obj/structure/sign/signnew/web{
 	icon_state = "person_godking"
@@ -37238,6 +37356,15 @@
 	icon_state = "stonefloor3"
 	},
 /area/dunwell/station/burrow/maintenance)
+"itf" = (
+/obj/structure/closet/lwfb/wooden,
+/obj/item/gun/projectile/newRevolver/duelista/richter,
+/obj/item/ammo_magazine/internal/cylinder/rev44,
+/turf/simulated/floor/lifeweb/wood/woodbf2{
+	dir = 5;
+	icon_state = "bf2"
+	},
+/area/dunwell/station/bridge)
 "iti" = (
 /obj/structure/rack/lwtable/table9_table{
 	dir = 9;
@@ -37293,6 +37420,19 @@
 	icon_state = "bleeky2"
 	},
 /area/dunwell/miniwar)
+"iBQ" = (
+/obj/structure/lifeweb/s_stone/xsd,
+/turf/simulated/floor/lifeweb/newbar{
+	dir = 8
+	},
+/area/dunwell/station/hydro)
+"iEt" = (
+/obj/item/condom/big,
+/turf/simulated/floor/lifeweb{
+	dir = 4;
+	icon_state = "bleeky2"
+	},
+/area/dunwell/station/consyte)
 "iEw" = (
 /obj/machinery/light/small/blue,
 /turf/simulated/floor/lifeweb/wood/wooddaarkk{
@@ -37321,6 +37461,13 @@
 	icon_state = "34242"
 	},
 /area/dunwell/station/bridge/noble/throne_room)
+"iGd" = (
+/obj/effect/decal/cleanable/poo/old,
+/turf/simulated/floor/lifeweb/newbar2{
+	dir = 4;
+	icon_state = "newbar2"
+	},
+/area/dunwell/station/miser/airy5)
 "iHy" = (
 /turf/simulated/floor/lifeweb/stone{
 	dir = 4;
@@ -37917,6 +38064,10 @@
 /obj/item/reagent_containers/glass/bottle/lifeweb/europium,
 /turf/simulated/floor/lifeweb/plaza,
 /area/dunwell/station/medbay)
+"jWN" = (
+/obj/structure/lifeweb/s_stone/xsd,
+/turf/simulated/floor/lifeweb/newbar,
+/area/dunwell/station/hydro)
 "jXt" = (
 /obj/multiz/stairs/enter,
 /turf/simulated/floor/lifeweb{
@@ -38055,6 +38206,13 @@
 	icon_state = "chapelnew"
 	},
 /area/dunwell/station/gates)
+"kee" = (
+/obj/machinery/light/small/mijadablue/weak{
+	dir = 1;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/lifeweb/cerb,
+/area/dunwell/station/brothel)
 "kei" = (
 /obj/machinery/light/small/artemis/tube/blue{
 	dir = 4;
@@ -38534,6 +38692,15 @@
 	icon_state = "carpbet23side"
 	},
 /area/dunwell/station/bridge)
+"kUo" = (
+/obj/structure/rack/lwtable/reinftable/horizontal{
+	dir = 1
+	},
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
+	},
+/area/dunwell/station/brothel)
 "kXa" = (
 /turf/simulated/floor/lifeweb{
 	icon_state = "wf2"
@@ -38608,6 +38775,10 @@
 /obj/item/reagent_containers/glass/bottle/lifeweb/thaesium,
 /turf/simulated/floor/lifeweb/plaza,
 /area/dunwell/station/medbay)
+"lcl" = (
+/obj/structure/sign/signnew/web/poster/sewerpipeflow,
+/turf/simulated/wall/r_wall/rust,
+/area/dunwell/station/brothel)
 "lcG" = (
 /obj/effect/mound,
 /turf/simulated/floor/plating/dirt_path,
@@ -38664,6 +38835,12 @@
 	icon_state = "vau3"
 	},
 /area/dunwell/station/bridge)
+"ljn" = (
+/turf/simulated/floor/lifeweb{
+	dir = 9;
+	icon_state = "bloodf2"
+	},
+/area/dunwell/station/brothel)
 "ljQ" = (
 /obj/structure/rack/lwtable/reinftable/horizontal,
 /obj/item/reagent_containers/glass/bottle/lifeweb/tantalum,
@@ -38903,6 +39080,9 @@
 "lKd" = (
 /obj/item/storage/drawer,
 /obj/item/spacecash/gold/c9,
+/obj/item/gun/projectile/automatic/pistol/ml23{
+	jam_chance = 12
+	},
 /turf/simulated/floor/lifeweb/wood/wooddaarkk,
 /area/dunwell/station/church/bishopoffice)
 "lKn" = (
@@ -39175,6 +39355,12 @@
 	icon_state = "surgery"
 	},
 /area/safespawnarea/siege)
+"mhq" = (
+/obj/effect/decal/cleanable/poo/old,
+/turf/simulated/floor/lifeweb/stone{
+	icon_state = "66"
+	},
+/area/dunwell/station/miser/airy5)
 "mir" = (
 /obj/structure/sign/signnew/web{
 	dir = 5;
@@ -39494,6 +39680,12 @@
 	icon_state = "1,2"
 	},
 /area/dunwell/miniwar)
+"mFw" = (
+/turf/simulated/floor/lifeweb/cerb{
+	dir = 9;
+	icon_state = "nfloorz"
+	},
+/area/dunwell/station/brothel)
 "mFP" = (
 /obj/structure/sign/signnew/web{
 	dir = 10;
@@ -40180,6 +40372,13 @@
 "nHW" = (
 /turf/simulated/wall/r_wall/cave,
 /area/dunwell/realsurface)
+"nHX" = (
+/obj/effect/decal/cleanable/cum,
+/turf/simulated/floor/lifeweb/newbar2{
+	dir = 8;
+	icon_state = "newbar2"
+	},
+/area/dunwell/station)
 "nJz" = (
 /obj/machinery/light/small/green,
 /turf/simulated/floor/lifeweb/stone{
@@ -40203,6 +40402,15 @@
 "nKv" = (
 /turf/simulated/floor/plating/dirt,
 /area/safespawnarea/siege)
+"nKA" = (
+/obj/effect/landmark{
+	name = "NPCBum"
+	},
+/turf/simulated/floor/lifeweb/newbar2{
+	dir = 8;
+	icon_state = "newbar2"
+	},
+/area/dunwell/station/miser/airy5)
 "nLJ" = (
 /obj/structure/mineral_door/metal,
 /turf/simulated/floor/lifeweb{
@@ -40908,6 +41116,21 @@
 	icon_state = "bar3"
 	},
 /area/dunwell/station/soulbreaker)
+"piw" = (
+/obj/structure/rack/lwtable/reinftable/horizontal{
+	dir = 4
+	},
+/obj/item/gun/projectile/automatic/pistol/magnum66/screamer23/pusher{
+	name = "Dusty Screamer 23";
+	desc = "It's seen some action.";
+	jam_chance = 18
+	},
+/obj/item/kitchen/utensil/knife/switchblade,
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
+	},
+/area/dunwell/station/brothel)
 "pkN" = (
 /obj/structure/lifeweb/s_stone/xsd,
 /obj/machinery/light/small/red{
@@ -41355,6 +41578,10 @@
 	icon_state = "bleeky2"
 	},
 /area/dunwell/station/bridge)
+"qce" = (
+/obj/item/kitchen/utensil/knife/dagger/silver,
+/turf/simulated/wall/r_wall/metal,
+/area/dunwell/station/brothel)
 "qcG" = (
 /obj/structure/rack/lwtable/table6,
 /turf/simulated/floor/lifeweb/wood/woodtF74{
@@ -41717,6 +41944,10 @@
 	icon_state = "23b"
 	},
 /area/dunwell/station/gates)
+"qNP" = (
+/obj/item/condom/small,
+/turf/simulated/floor/lifeweb/newbar,
+/area/dunwell/station/consyte)
 "qOj" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/lifeweb/stone{
@@ -41905,6 +42136,12 @@
 	icon_state = "F2"
 	},
 /area/dunwell/miscplaces)
+"rjt" = (
+/obj/effect/decal/cleanable/cum,
+/turf/simulated/floor/lifeweb{
+	icon_state = "nfloorz"
+	},
+/area/dunwell/station/residential)
 "rlx" = (
 /turf/simulated/floor/lifeweb/wood/wooddaarkk{
 	dir = 6;
@@ -41936,6 +42173,13 @@
 	icon_state = "wf"
 	},
 /area/dunwell/station/merchant)
+"rpQ" = (
+/obj/item/condom/small,
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "bloodf2"
+	},
+/area/dunwell/station/brothel)
 "rqI" = (
 /obj/structure/aibots,
 /turf/simulated/wall/r_wall/cave,
@@ -41995,6 +42239,10 @@
 /obj/item/reagent_containers/glass/bottle/lifeweb/inaprovaline,
 /turf/simulated/floor/lifeweb/plaza,
 /area/dunwell/station/medbay)
+"rvX" = (
+/obj/effect/decal/cleanable/cum,
+/turf/simulated/floor/lifeweb/cerb,
+/area/dunwell/station/kitchen)
 "rxx" = (
 /turf/simulated/floor/lifeweb{
 	icon_state = "24"
@@ -42152,6 +42400,13 @@
 /obj/structure/grille,
 /turf/simulated/floor/os13/fs17,
 /area/dunwell/surface)
+"rKF" = (
+/obj/structure/lifeweb/s_stone/xsd,
+/turf/simulated/floor/lifeweb/newbar{
+	dir = 4;
+	icon_state = "newbar"
+	},
+/area/dunwell/station/hydro)
 "rKT" = (
 /obj/multiz/stairs/enter,
 /turf/simulated/floor/lifeweb/cerb2,
@@ -43116,6 +43371,12 @@
 	icon_state = "carpbet23side"
 	},
 /area/dunwell/station/bridge)
+"tKT" = (
+/obj/item/condom/big,
+/turf/simulated/floor/lifeweb/stone{
+	icon_state = "stonefloor2"
+	},
+/area/dunwell/station/miser/airy5)
 "tLy" = (
 /obj/machinery/light/small/red{
 	dir = 8;
@@ -43485,6 +43746,12 @@
 /obj/machinery/chem_master,
 /turf/simulated/floor/lifeweb/plaza,
 /area/dunwell/station/medbay)
+"uHH" = (
+/turf/simulated/floor/lifeweb/cerb{
+	dir = 4;
+	icon_state = "nfloorz"
+	},
+/area/dunwell/station/brothel)
 "uJr" = (
 /obj/effect/landmark{
 	name = "Gink"
@@ -44565,6 +44832,13 @@
 /obj/structure/fireplace/wallplace/north,
 /turf/simulated/floor/lifeweb/wood,
 /area/dunwell/station/bridge)
+"wyl" = (
+/obj/structure/morgueslab,
+/turf/simulated/floor/lifeweb{
+	dir = 2;
+	icon_state = "brothel"
+	},
+/area/dunwell/station/brothel)
 "wzL" = (
 /obj/structure/door_protect{
 	dir = 1;
@@ -44634,6 +44908,12 @@
 	icon_state = "66"
 	},
 /area/dunwell/station/burrow/maintenance)
+"wEH" = (
+/obj/item/condom/small,
+/turf/simulated/floor/lifeweb/stone{
+	icon_state = "1,2"
+	},
+/area/dunwell/station/miser/airy5)
 "wFK" = (
 /obj/structure/trash/one,
 /turf/simulated/floor/plating/dirt_path,
@@ -100551,7 +100831,7 @@ aCA
 aEG
 aFR
 aFV
-aFV
+aqa
 aFR
 aae
 olN
@@ -100956,7 +101236,7 @@ aEH
 aFV
 aFV
 aFV
-aFV
+aqa
 aJj
 olN
 olN
@@ -101541,7 +101821,7 @@ ahC
 amp
 amp
 anO
-amp
+nKA
 amp
 anO
 amp
@@ -101740,7 +102020,7 @@ ahp
 akJ
 aqC
 ahC
-ams
+iGd
 ams
 anP
 ams
@@ -107195,7 +107475,7 @@ aiT
 aoL
 adu
 adu
-adu
+foG
 aoL
 aoL
 axa
@@ -108604,7 +108884,7 @@ ajf
 ajI
 ajC
 ajC
-ajC
+qNP
 aiT
 acY
 acY
@@ -109220,7 +109500,7 @@ auN
 aCA
 axf
 aCA
-aCA
+tKT
 ate
 auj
 avA
@@ -110011,7 +110291,7 @@ acY
 acY
 ahC
 ahC
-alm
+wEH
 alm
 awT
 awY
@@ -110232,7 +110512,7 @@ avg
 aiI
 aiI
 aiI
-aCA
+tKT
 aoK
 aoK
 avg
@@ -111840,7 +112120,7 @@ ato
 aln
 alL
 amd
-alM
+apX
 anq
 aaZ
 acY
@@ -112040,9 +112320,9 @@ akf
 aaY
 ato
 aaY
+alR
 alM
-alM
-alM
+alR
 anr
 aaZ
 acY
@@ -112053,9 +112333,9 @@ aCA
 axG
 avg
 avg
-acY
-acY
 avg
+acY
+acY
 avg
 ajZ
 ajZ
@@ -112243,7 +112523,7 @@ akv
 atq
 alo
 alM
-alM
+apX
 alM
 ans
 aaZ
@@ -112255,9 +112535,9 @@ acY
 acY
 acY
 avg
-acY
-acY
 avg
+acY
+acY
 aCA
 avC
 ahC
@@ -112454,12 +112734,12 @@ aaZ
 aaZ
 aaZ
 aaZ
+aaZ
 acY
 acY
-aLh
+avg
 acY
 ayH
-aiH
 ayS
 acY
 acY
@@ -112653,15 +112933,15 @@ aaY
 aoh
 aoM
 aom
-apX
+aaZ
 ary
+aoo
 aaZ
 aaZ
 aaZ
-aLh
+avg
 ahC
 ahC
-aiH
 aCA
 ahC
 ahC
@@ -112854,14 +113134,14 @@ ajU
 aaY
 abf
 abf
+fcE
+aoN
+fcE
 abf
 abf
-abf
-abf
-arz
+aoQ
 aaZ
 aCA
-avg
 aiH
 aiH
 aiH
@@ -113055,14 +113335,14 @@ amg
 amI
 anE
 abf
-abf
-aoo
-aoQ
-apy
-abf
+fcE
 abf
 aaZ
-aCA
+apy
+abf
+mFw
+kUo
+aaZ
 aCA
 aiH
 avg
@@ -113073,7 +113353,7 @@ oqf
 aGy
 aml
 aml
-aLt
+iEt
 aLt
 aLt
 aLt
@@ -113260,11 +113540,11 @@ aaY
 aoN
 aaY
 aaZ
+piw
+abf
+abf
+aaC
 aaZ
-aaZ
-arS
-aaZ
-aCA
 avg
 avg
 avg
@@ -113459,14 +113739,14 @@ ami
 amI
 aaY
 aoj
-abf
+cTf
 app
-aqa
-aij
-aij
-aCA
-aCA
-aCA
+aaY
+wyl
+abf
+abf
+alR
+cGi
 aiH
 awd
 aiH
@@ -113663,13 +113943,13 @@ ant
 aok
 apo
 abf
+qce
 aaY
-aaC
-acY
-ahC
-atw
-aiH
-aiH
+cQR
+aaZ
+aaZ
+aaZ
+lcl
 aiH
 aCA
 aCA
@@ -113869,7 +114149,7 @@ ajn
 ajn
 ajn
 aaZ
-ahC
+aaZ
 aiH
 aLq
 auc
@@ -114064,8 +114344,8 @@ amk
 mST
 amK
 anB
-abf
-abf
+hld
+hyQ
 axo
 ajn
 arX
@@ -114268,7 +114548,7 @@ aaY
 aaY
 aom
 abf
-abf
+uHH
 aqe
 abf
 abf
@@ -114666,13 +114946,13 @@ ajn
 alx
 alS
 alS
-alS
+rpQ
 aaZ
 aaZ
 aaZ
+kee
 abf
-abf
-abf
+fcE
 aaZ
 asd
 atp
@@ -114866,13 +115146,13 @@ ahC
 acY
 ajn
 alz
-alS
+ljn
 alS
 amN
 aaZ
 alQ
 aBz
-abf
+fcE
 abf
 aon
 aaZ
@@ -114890,7 +115170,7 @@ adq
 adq
 adq
 aiH
-aiH
+ags
 aGp
 aLt
 aLt
@@ -115271,7 +115551,7 @@ acY
 ajn
 amM
 alS
-alS
+ljn
 alS
 amn
 ajn
@@ -115294,7 +115574,7 @@ ahC
 ahC
 adq
 aiH
-aiH
+ags
 aGy
 aGy
 aGy
@@ -115499,8 +115779,8 @@ aiH
 aFv
 aiH
 aiH
-aiH
-aFv
+mhq
+arz
 ahC
 aEJ
 aEJ
@@ -115702,7 +115982,7 @@ aiH
 aiH
 aiH
 aiH
-aiH
+arS
 ahC
 aEJ
 aEJ
@@ -144979,8 +145259,8 @@ bxk
 blD
 bxb
 bnp
-bnX
-bnW
+bxk
+boM
 bpB
 bnW
 bnW
@@ -145181,8 +145461,8 @@ aUB
 blE
 bxb
 bnq
-bnX
-boM
+bnW
+bnW
 bpC
 bqf
 bqZ
@@ -149807,7 +150087,7 @@ aRd
 aRd
 aRd
 aRd
-aRd
+bnX
 aZI
 aZI
 aZI
@@ -150009,7 +150289,7 @@ aRd
 aRd
 aRd
 aRd
-aRd
+rKF
 aZK
 ban
 baR
@@ -150211,7 +150491,7 @@ aRd
 aRd
 aRd
 aRd
-aRd
+jWN
 aZL
 bao
 baS
@@ -150413,7 +150693,7 @@ aRd
 aRd
 aRd
 aRd
-aRd
+iBQ
 aZK
 acL
 bYY
@@ -150615,7 +150895,7 @@ aRd
 aRd
 aRd
 aRd
-aRd
+jWN
 aZK
 aZK
 baU
@@ -151665,7 +151945,7 @@ bbz
 bbz
 bbz
 bbz
-bbz
+nHX
 bwx
 bzk
 aao
@@ -152446,7 +152726,7 @@ bdw
 bgw
 bcs
 bhZ
-bdC
+rvX
 bjq
 bkd
 blb
@@ -155081,7 +155361,7 @@ bkS
 bnG
 bmf
 bkS
-bmQ
+bmS
 bmf
 brk
 bae
@@ -190236,7 +190516,7 @@ chG
 chW
 cio
 ciG
-ciz
+gmA
 cio
 aqB
 ciz
@@ -192832,7 +193112,7 @@ bQQ
 bRW
 bSL
 bTr
-bSL
+rjt
 bNq
 bVk
 bMN
@@ -222118,7 +222398,7 @@ aao
 aao
 aao
 pMV
-dsy
+itf
 dsy
 dsy
 dsy

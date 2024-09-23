@@ -83,7 +83,7 @@
 				var/datum/turntable_soundtrack/D = new()
 				D.f_name = "D"
 				D.name = "LZ "
-				D.path = 'sound/turntable/out-of-my-territory.ogg'
+				D.path = 'sound/turntable/newbar46.ogg'
 				turntable_soundtracks.Add(D)
 
 	for(var/i in typesof(/datum/turntable_soundtrack) - /datum/turntable_soundtrack)
@@ -118,7 +118,7 @@
 				var/datum/turntable_soundtrack/D = new()
 				D.f_name = "D"
 				D.name = "LZ "
-				D.path = 'sound/turntable/out-of-my-territory.ogg'
+				D.path = 'sound/turntable/newbar46.ogg'
 				turntable_soundtracks.Add(D)
 		done = 1
 
