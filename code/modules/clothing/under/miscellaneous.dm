@@ -78,9 +78,9 @@
 /obj/item/clothing/under/gink
 	name = "wei-ji garment"
 	desc = "It's a very smart uniform."
-	icon_state = "gink"
-	item_state = "gink"
-	item_color = "gink"
+	icon_state = "gink_s"
+	item_state = "gink_s"
+	item_color = "gink_s"
 	flags = FPRINT | TABLEPASS
 
 /obj/item/clothing/under/rank/mailman
@@ -261,27 +261,27 @@
 /obj/item/clothing/under/soviet
 	name = "soviet uniform"
 	desc = "For the Motherland!"
-	icon_state = "soviet"
-	item_state = "soviet"
-	item_color = "soviet"
+	icon_state = "soviet_s"
+	item_state = "soviet_s"
+	item_color = "soviet_s"
 
 /obj/item/clothing/under/ordinator
 	name = "tribunal enlisted uniform"
-	icon_state = "opscam"
-	item_state = "opscam"
-	item_color = "opscam"
+	icon_state = "ordinator_s"
+	item_state = "ordinator_s"
+	item_color = "ordinator_s"
 
 /obj/item/clothing/under/ordinatorLT
 	name = "tribunal officer uniform"
-	icon_state = "general"
-	item_state = "general"
-	item_color = "general"
+	icon_state = "ordinatorLT_s"
+	item_state = "ordinatorLT_s"
+	item_color = "ordinatorLT_s"
 
 /obj/item/clothing/under/ordinator/old
 	name = "old tribunal ordinator uniform"
-	icon_state = "oldordinator"
-	item_state = "oldordinator"
-	item_color = "oldordinator"
+	icon_state = "oldordinator_s"
+	item_state = "oldordinator_s"
+	item_color = "oldordinator_s"
 
 /obj/item/clothing/under/hunter
 	name = "tailored shirt"
