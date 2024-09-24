@@ -39867,13 +39867,8 @@
 /obj/structure/rack/lwtable/reinftable/horizontal{
 	dir = 4
 	},
-/obj/item/gun/projectile/automatic/pistol/magnum66/screamer23/pusher{
-	name = "Dusty Screamer 23";
-	desc = "It's seen some action.";
-	jam_chance = 18;
-	mag_type = /obj/item/ammo_magazine/external/sm45/pusher/full
-	},
 /obj/item/kitchen/utensil/knife/switchblade,
+/obj/item/gun/projectile/automatic/pistol/magnum66/screamer23/pusher,
 /turf/simulated/floor/lifeweb{
 	dir = 2;
 	icon_state = "brothel"
