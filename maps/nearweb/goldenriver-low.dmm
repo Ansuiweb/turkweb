@@ -42318,6 +42318,15 @@
 	icon_state = "lev"
 	},
 /area/dunwell/surface)
+"qLa" = (
+/obj/structure/rack/lwtable/table10end{
+	dir = 8;
+	icon_state = "wood_1tileendtable"
+	},
+/turf/simulated/floor/lifeweb{
+	icon_state = "24"
+	},
+/area/dunwell/station)
 "qLd" = (
 /obj/machinery/artemis/random,
 /turf/simulated/floor/lifeweb{
@@ -42346,6 +42355,15 @@
 	},
 /turf/simulated/wall/r_wall/metal,
 /area/dunwell/station/burrow/maintenance)
+"qPG" = (
+/obj/effect/landmark/start{
+	name = "Bum"
+	},
+/obj/machinery/light/small/mijadablue/weak{
+	dir = 8
+	},
+/turf/simulated/floor/lifeweb/merch,
+/area/dunwell/station/train_station_fort)
 "qSa" = (
 /obj/structure/fireplace/alt,
 /obj/structure/beatiful_carpet{
@@ -44033,6 +44051,15 @@
 /turf/simulated/floor/lifeweb{
 	dir = 2;
 	icon_state = "lplatingdmg1"
+	},
+/area/dunwell/station)
+"uhP" = (
+/obj/structure/rack/lwtable/table10end{
+	dir = 4;
+	icon_state = "wood_1tileendtable"
+	},
+/turf/simulated/floor/lifeweb{
+	icon_state = "24"
 	},
 /area/dunwell/station)
 "uhQ" = (
@@ -135769,7 +135796,7 @@ aAt
 bhv
 bTv
 bTv
-bue
+bTv
 bTv
 bTv
 bTv
@@ -137355,7 +137382,7 @@ aao
 aao
 bgJ
 bij
-biQ
+qPG
 bli
 bkm
 bhB
@@ -148896,7 +148923,7 @@ boe
 boe
 akj
 brc
-brJ
+bxb
 bxb
 avv
 aDQ
@@ -149097,8 +149124,8 @@ boe
 boe
 boe
 akR
-brc
-brK
+uhP
+brJ
 bxb
 aDQ
 agM
@@ -149299,8 +149326,8 @@ boe
 boe
 boe
 apv
-brc
-bxb
+qLa
+brK
 bxb
 avv
 buF
@@ -157585,7 +157612,7 @@ bxx
 bxT
 bot
 bua
-bub
+bot
 bxT
 bxx
 bxx
@@ -157786,7 +157813,7 @@ bxx
 bxx
 bxT
 aqQ
-bot
+bub
 bot
 bxT
 bxx
@@ -158188,8 +158215,8 @@ aao
 aao
 aao
 aao
-bxT
-bub
+bpH
+bot
 bot
 bot
 bwx
