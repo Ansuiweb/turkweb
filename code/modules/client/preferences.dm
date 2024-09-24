@@ -142,8 +142,8 @@ var/const/MAX_SAVE_SLOTS = 10
 	var/togglefuta = 0
 	var/togglesize = 0
 //VOLUME
-	var/ambi_volume = 50
-	var/music_volume = 40
+	var/ambi_volume = 40
+	var/music_volume = 30
 	var/toggleLobbyScreen = 0
 
 	var/graphicsSetting = 0
@@ -955,7 +955,7 @@ var/const/MAX_SAVE_SLOTS = 10
 					if("fatness")
 						fat = !fat
 					*/
-			
+
 					if("domhand")
 						if(dom_hand == RIGHT_HAND)
 							dom_hand = LEFT_HAND
