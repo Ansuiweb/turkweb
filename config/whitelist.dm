@@ -6,11 +6,11 @@ var/global/private_party = 1
 
 var/global/list/proxyignore = list()
 
-var/global/list/access_comrade = list("raiddean", "coroneljones", "benblu", "tigers101", "shadowkiller104")
+var/global/list/access_comrade = list("Ansui", "Priszma", "benblu", "tigers101", "shadowkiller104")
 
 var/global/list/access_villain = list("shadowkiller104")
 
-var/global/list/access_pigplus = list()
+var/global/list/access_pigplus = list("VayZz", "Exanimate", "Skankhunt31")
 
 var/global/list/guardianlist = list()
 
