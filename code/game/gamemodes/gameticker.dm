@@ -212,7 +212,7 @@ var/turf/MiniSpawn
 			to_chat(world,"<b><span class='highlighttext'>Crusade aborted:</span></b> We need <span class='bname'>20 soldiers</span>!")
 			to_chat(world,"<b><span class='bname'>10 Thanatis</span> and <span class='bname'>10 Post-Christians</span>!")
 		else
-			to_chat(world,"<b><span class='hitbold'>Story aborted:</span></b><span class='hit'> The fortress needs a generous </span><span class='[merchant]'><b>Merchant</b></span>,<span class='hit'> a just </span><span class='[baron]'><b>Baron</b></span><span class='hit'>")
+			to_chat(world,"<b><span class='hitbold'>Story aborted:</span></b><span class='hit'> The fortress needs a generous </span><span class='[merchant]'><b>Merchant</b></span>,<span class='hit'> and a just </span><span class='[baron]'><b>Baron</b></span><span class='hit'>")
 		qdel(mode)
 		first_timer = FALSE
 		current_state = GAME_STATE_PREGAME
