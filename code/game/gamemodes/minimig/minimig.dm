@@ -66,7 +66,7 @@ var/minimig_bandit = FALSE
 								if(M.stat != DEAD)
 									M.client.ChromieWinorLoose(M.client, 1)
 	..()
-/*
+/
 /datum/game_mode/quietday/can_start()
 	for(var/mob/new_player/player in mob_list)
 		if(player.ready && player.client.work_chosen == "Baron")
@@ -74,6 +74,6 @@ var/minimig_bandit = FALSE
 		else
 			return 0
 	return 0
-*/
+/
 /datum/game_mode/minimig/can_start()
 	return 1
