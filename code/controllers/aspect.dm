@@ -165,12 +165,6 @@ var/list/allClothing = list()
 
 	event_message = "The baron has lost all the treasury to his gamble habit."
 
-/datum/round_event/gifted
-	name = "Dark Nights"
-	id = "gifted"
-
-	event_message = "The fortress is not known to be bright."
-
 /datum/round_event/united
 	name = "United"
 	id = "united"
