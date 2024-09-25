@@ -22003,6 +22003,7 @@
 /area/dunwell/station/bridge)
 "blw" = (
 /obj/structure/grille/reinforced/l/west,
+/obj/structure/grille/reinforced/bars,
 /turf/simulated/floor/lifeweb/newbar,
 /area/dunwell/station/bridge/meister)
 "blC" = (
@@ -23810,6 +23811,7 @@
 /area/dunwell/station/bridge)
 "brA" = (
 /obj/structure/grille/reinforced/l/south,
+/obj/structure/grille/reinforced/bars,
 /turf/simulated/floor/lifeweb/wood/woodt,
 /area/dunwell/station/bridge/meister)
 "brB" = (
@@ -23960,11 +23962,11 @@
 /turf/simulated/wall/r_wall/metal,
 /area/dunwell/station/train_station_fort)
 "bsd" = (
-/obj/machinery/door/airlock/transgates/ins/merchant/_1{
-	req_access_txt = "156";
-	req_one_access_txt = "156"
-	},
 /obj/structure/door_protect,
+/obj/machinery/door/airlock/transgates/ins/merchant/_1{
+	req_access_txt = "159";
+	req_one_access_txt = "159"
+	},
 /turf/simulated/floor/lifeweb{
 	dir = 4;
 	icon_state = "23"
@@ -23972,8 +23974,8 @@
 /area/dunwell/station/train_station_fort)
 "bse" = (
 /obj/machinery/door/airlock/transgates/ins/merchant/_2{
-	req_access_txt = "156";
-	req_one_access_txt = "156"
+	req_access_txt = "159";
+	req_one_access_txt = "159"
 	},
 /obj/structure/door_protect{
 	dir = 8;
@@ -23986,8 +23988,8 @@
 /area/dunwell/station/train_station_fort)
 "bsf" = (
 /obj/machinery/door/airlock/transgates/ins/merchant/_3{
-	req_access_txt = "156";
-	req_one_access_txt = "156"
+	req_access_txt = "159";
+	req_one_access_txt = "159"
 	},
 /obj/structure/door_protect{
 	dir = 1;
@@ -43538,7 +43540,9 @@
 "tdp" = (
 /obj/structure/closet/lwfb/wooden,
 /obj/item/gun/projectile/newRevolver/duelista/richter,
-/obj/item/ammo_magazine/internal/cylinder/rev44,
+/obj/item/stack/bullets/Richter/six,
+/obj/item/stack/bullets/Richter/six,
+/obj/item/stack/bullets/Richter/six,
 /turf/simulated/floor/lifeweb/wood/woodbf2{
 	dir = 5;
 	icon_state = "bf2"

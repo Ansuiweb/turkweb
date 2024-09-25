@@ -142,8 +142,8 @@ var/const/MAX_SAVE_SLOTS = 10
 	var/togglefuta = 0
 	var/togglesize = 0
 //VOLUME
-	var/ambi_volume = 40
-	var/music_volume = 30
+	var/ambi_volume = 25
+	var/music_volume = 50
 	var/toggleLobbyScreen = 0
 
 	var/graphicsSetting = 0

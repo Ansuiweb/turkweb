@@ -79,7 +79,7 @@
 	name = "wei-ji garment"
 	desc = "It's a very smart uniform."
 	icon_state = "gink_s"
-	item_state = "gink_s"
+	item_state = "gink"
 	item_color = "gink_s"
 	flags = FPRINT | TABLEPASS
 
@@ -261,26 +261,30 @@
 /obj/item/clothing/under/soviet
 	name = "soviet uniform"
 	desc = "For the Motherland!"
+	icon = 'icons/mob/uniform.dmi'
 	icon_state = "soviet_s"
-	item_state = "soviet_s"
+	item_state = "soviet"
 	item_color = "soviet_s"
 
 /obj/item/clothing/under/ordinator
 	name = "tribunal enlisted uniform"
+	icon = 'icons/mob/uniform.dmi'
 	icon_state = "ordinator_s"
-	item_state = "ordinator_s"
+	item_state = "oscam"
 	item_color = "ordinator_s"
 
 /obj/item/clothing/under/ordinatorLT
 	name = "tribunal officer uniform"
+	icon = 'icons/mob/uniform.dmi'
 	icon_state = "ordinatorLT_s"
-	item_state = "ordinatorLT_s"
+	item_state = "general"
 	item_color = "ordinatorLT_s"
 
 /obj/item/clothing/under/ordinator/old
 	name = "old tribunal ordinator uniform"
+	icon = 'icons/mob/uniform.dmi'
 	icon_state = "oldordinator_s"
-	item_state = "oldordinator_s"
+	item_state = "oldordinator"
 	item_color = "oldordinator_s"
 
 /obj/item/clothing/under/hunter
