@@ -1,6 +1,5 @@
 /mob/proc/flash_pain()
 	flick("pain", pain)
-	sleep(15) //epilepsy protection cuz this shit keeps getting called
 
 /mob/proc/flash_weak_pain()
 	flick("weak_pain", pain)
@@ -121,6 +120,7 @@ mob/var/last_pain_message_custom = ""
 		last_pain_message = msg
 		to_chat(src, msg)
 	next_pain_time = world.time + 100 //This used to be world.time + 100 minus amount. But guess what, if amount is 100 pain then there is no cooldown and your guy's screams overlap each other and fire constantly. This is bad. Don't do this.
+	to_chat(src, addtext("You're in this much pain: ", num2text(pain_amount)))
 
 
 // message is the custom message to be displayed
