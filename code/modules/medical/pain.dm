@@ -29,7 +29,7 @@ mob/var/last_pain_message_custom = ""
 		return
 
 	//turkic code right here
-	var/pain_amount = amount/feel_pain_check() //the amount variable was the default pain amount, but I'm trying to balance the painkillers so I had to create my own pain amount
+	var/pain_amount = round(amount/feel_pain_check()) //the amount variable was the default pain amount, but I'm trying to balance the painkillers so I had to create my own pain amount
 
 	if(pain_amount > 10 && istype(src,/mob/living/carbon/human))
 		if(src.paralysis)
