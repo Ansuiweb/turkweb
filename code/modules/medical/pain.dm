@@ -1,5 +1,6 @@
 /mob/proc/flash_pain()
 	flick("pain", pain)
+	sleep(15) //epilepsy protection cuz this shit keeps getting called
 
 /mob/proc/flash_weak_pain()
 	flick("weak_pain", pain)
@@ -26,11 +27,15 @@ mob/var/last_pain_message_custom = ""
 		return
 	if(world.time < next_pain_time && !force)
 		return
+
 	if(amount > 10 && istype(src,/mob/living/carbon/human))
 		if(src.paralysis)
 			src.paralysis = max(0, src.paralysis-round(amount/10))
 	if(amount > 50 && prob(amount / 5))
 		src.drop_item()
+	if(amount > 90 && prob(5) && src.my_stats.get_stat(STAT_HT) < 16) //strong men are like, strong.
+		src.KnockDown()
+
 	var/msg
 	if(burning)
 		switch(amount)
@@ -87,11 +92,20 @@ mob/var/last_pain_message_custom = ""
 					emote("agonyscream")
 					recoil(src)
 					shake_camera(src, 4, 1)
+
 				if(ishuman(src) && src.client)
 					if(prob(15))
 						var/mob/living/carbon/human/H = src
 						H.blur(1,50)
 						to_chat(src, "You shiver in pain.")
+						if(src.gender == MALE)
+							playsound(src.loc, pick('sound/voice/painb.ogg','sound/voice/painb2.ogg','sound/voice/painb3.ogg','sound/voice/painb4.ogg','sound/voice/painb5.ogg','sound/voice/painb6.ogg','sound/voice/painb7.ogg','sound/voice/painb8.ogg'), 75, 0, -1)
+
+				if(ishuman(src) && src.client)
+					if(prob(5))
+						var/mob/living/carbon/human/H = src
+						H.blur(1,50)
+						to_chat(src, "Your whole body goes numb.")
 						if(src.gender == MALE)
 							playsound(src.loc, pick('sound/voice/painb.ogg','sound/voice/painb2.ogg','sound/voice/painb3.ogg','sound/voice/painb4.ogg','sound/voice/painb5.ogg','sound/voice/painb6.ogg','sound/voice/painb7.ogg','sound/voice/painb8.ogg'), 75, 0, -1)
 

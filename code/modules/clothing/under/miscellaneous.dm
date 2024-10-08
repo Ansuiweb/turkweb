@@ -268,6 +268,7 @@
 
 /obj/item/clothing/under/ordinator
 	name = "tribunal enlisted uniform"
+	desc = "Looks pale."
 	icon = 'icons/mob/uniform.dmi'
 	icon_state = "ordinator_s"
 	item_state = "oscam"
@@ -275,6 +276,7 @@
 
 /obj/item/clothing/under/ordinatorLT
 	name = "tribunal officer uniform"
+	desc = "Looks less pale."
 	icon = 'icons/mob/uniform.dmi'
 	icon_state = "ordinatorLT_s"
 	item_state = "general"
@@ -282,6 +284,7 @@
 
 /obj/item/clothing/under/ordinator/old
 	name = "old tribunal ordinator uniform"
+	desc = "Looks really pale."
 	icon = 'icons/mob/uniform.dmi'
 	icon_state = "oldordinator_s"
 	item_state = "oldordinator"
