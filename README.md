@@ -1,5 +1,4 @@
-# Basically Farweb, but actually working.
+# Türkweb.
 
-Ripped it off, use at your own will (it's retarded code)
+Nearwebin çalışan hali.
 
-The people from Nearweb are retarded stay far, far and far away from them.
