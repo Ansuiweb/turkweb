@@ -28,17 +28,23 @@ mob/var/last_pain_message_custom = ""
 	if(world.time < next_pain_time && !force)
 		return
 
-	if(amount > 10 && istype(src,/mob/living/carbon/human))
+	//turkic code right here
+	var/pain_amount = amount/feel_pain_check() //the amount variable was the default pain amount, but I'm trying to balance the painkillers so I had to create my own pain amount
+
+	if(pain_amount > 10 && istype(src,/mob/living/carbon/human))
 		if(src.paralysis)
-			src.paralysis = max(0, src.paralysis-round(amount/10))
-	if(amount > 50 && prob(amount / 5))
+			src.paralysis = max(0, src.paralysis-round(pain_amount/10))
+	if(pain_amount > 50 && prob(pain_amount / 5))
 		src.drop_item()
-	if(amount > 90 && prob(5) && src.my_stats.get_stat(STAT_HT) < 16) //strong men are like, strong.
+	if(pain_amount > 90 && prob(5) && src.my_stats.get_stat(STAT_HT) < 16) 
 		src.KnockDown()
+	else if(pain_amount > 90 && prob(5) && src.my_stats.get_stat(STAT_HT) >= 16) //strong people are like, strong.
+		src.Weaken(1)
+		to_chat(src, "The pain is getting worse. But I can hold on.")
 
 	var/msg
 	if(burning)
-		switch(amount)
+		switch(pain_amount)
 			if(1 to 10)
 				flash_weakest_pain()
 				msg = "<span class='combatglow'>My [partname] burns.</span>"
@@ -67,7 +73,7 @@ mob/var/last_pain_message_custom = ""
 					recoil(src)
 					shake_camera(src, 4, 1)
 	else
-		switch(amount)
+		switch(pain_amount)
 			if(1 to 10)
 				flash_weakest_pain()
 				msg = "<span class='bname'><small>My [partname] hurts.</small></span>"
@@ -85,7 +91,7 @@ mob/var/last_pain_message_custom = ""
 					msg = "<span class='combatbold'>[pick("OH [uppertext(H.god_text())]!","WHAT A PAIN!")] My [partname]!</span>"
 				else
 					msg = "<span class='combatbold'>[pick("OH GOD!","WHAT A PAIN!")] My [partname]!</span>"
-				if(prob(amount) && prob(20))
+				if(prob(pain_amount) && prob(20))
 					if(ishuman(src))
 						var/mob/living/carbon/human/H = src
 						H.blur(1,50)
@@ -106,6 +112,8 @@ mob/var/last_pain_message_custom = ""
 						var/mob/living/carbon/human/H = src
 						H.blur(1,50)
 						to_chat(src, "Your whole body goes numb.")
+						recoil(src)
+						shake_camera(src, 4, 2)
 						if(src.gender == MALE)
 							playsound(src.loc, pick('sound/voice/painb.ogg','sound/voice/painb2.ogg','sound/voice/painb3.ogg','sound/voice/painb4.ogg','sound/voice/painb5.ogg','sound/voice/painb6.ogg','sound/voice/painb7.ogg','sound/voice/painb8.ogg'), 75, 0, -1)
 

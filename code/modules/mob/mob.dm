@@ -870,8 +870,8 @@ note dizziness decrements automatically in the mob's Life() proc.
 //This proc knocks a mob over, and makes them drop what they're holding, making them have to get back up.
 //Anywhere you see Stun(1) Weaken(1) replace it with this proc.
 /mob/proc/KnockDown()
-	Stun(3)
-	Weaken(3)
+	Stun(1)
+	Weaken(1)
 
 /mob/proc/Stun(amount)
 	if(ismonster(src))

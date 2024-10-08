@@ -4,7 +4,9 @@
 /datum/organ/external/proc/remove_pain(var/number)
 	src.painLW -= number
 
+//future idea: make it so that each chemical provides a different amount of tolerance against pain, instead of just declining all of it
 /mob/living/carbon/human/proc/feel_pain_check() //Check if they can feel pain at all. Add whatever other pain chems or special cases here please.
+	var/tolerance_amount = null
 	if(stat == DEAD) // Use this instead of writing your own huge ass fucking list.
 		return FALSE
 	if(iszombie(src))
@@ -20,19 +22,24 @@
 	if(species && species.flags & NO_PAIN)
 		return FALSE
 	if(reagents.has_reagent("dentrine"))
-		return FALSE
+		tolerance_amount = 2 //halves the pain
+		return tolerance_amount
 	if(reagents.has_reagent("morphine"))
-		return FALSE
+		tolerance_amount = 1.8
+		return tolerance_amount
 	if(reagents.has_reagent("heroin"))
-		return FALSE
+		tolerance_amount = 1.7
+		return tolerance_amount
 	if(reagents.has_reagent("oxycodone"))
-		return FALSE
+		tolerance_amount = 1.5
+		return tolerance_amount
 	if(reagents.has_reagent("tramadol"))
-		return FALSE
-	return TRUE
+		tolerance_amount = 1.2
+		return tolerance_amount
+	return 1 //no helping drugs
 
 /mob/living/carbon/human/var
-	painLWThresold = 100
+	painLWThresold = 100//main pain threshold, they managed to typo it some fucking how
 
 /mob/living/carbon/proc/get_pain()
 	if(!ishuman(src)) return 0
