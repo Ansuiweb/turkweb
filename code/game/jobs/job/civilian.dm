@@ -444,7 +444,7 @@
 		if(prob(80))
 			H.add_perk(/datum/perk/illiterate)
 		if(prob(5))
-			H.equip_to_slot_or_del(new /obj/item/gun/projectile/automatic/pistol/magnum66/screamer23(H), slot_l_hand)
+			H.equip_to_slot_or_del(new /obj/item/gun/projectile/automatic/pistol/magnum66/screamer23(H), slot_belt)
 			H.my_skills.add_skill(SKILL_RANGE, 4)
 		for(var/obj/item/reagent_containers/food/snacks/organ/O in H.organ_storage)
 			O.bumorgans()

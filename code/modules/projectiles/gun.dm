@@ -228,7 +228,8 @@
 
 	if(!in_chamber)
 		return
-
+	
+	//remove this part later
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(H.job == "Francisco's Advisor") // He is the protagonist from the show, you can't just kill him! (INCREDIBLE PLOTARMOR)
@@ -245,7 +246,7 @@
 	if(recoil)
 		spawn()
 			if(H.my_skills.get_skill(SKILL_RANGE) <= 3)
-				shake_camera(H, recoil + 1, recoil)
+				shake_camera(H, recoil + 6, recoil)//gun go boom, shakey shakey....
 				if(prob(50))
 					H.blur(1, 6)
 					H.CU()
@@ -264,7 +265,7 @@
 			set_light(0)
 
 	if(silenced)
-		playsound(user, fire_sound, 10, 1)
+		playsound(user, fire_sound, 0, 250, 1)//silencers aren't that quiet
 	else
 		if(should_sound)
 			playsound(user, fire_sound, 1000, 1)

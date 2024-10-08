@@ -30,14 +30,15 @@ mob/var/last_pain_message_custom = ""
 	//turkic code right here
 	var/pain_amount = round(amount/feel_pain_check()) //the amount variable was the default pain amount, but I'm trying to balance the painkillers so I had to create my own pain amount
 
-	if(pain_amount > 10 && istype(src,/mob/living/carbon/human))
+	if(pain_amount > 20 && istype(src,/mob/living/carbon/human))
 		if(src.paralysis)
 			src.paralysis = max(0, src.paralysis-round(pain_amount/10))
 	if(pain_amount > 50 && prob(pain_amount / 5))
 		src.drop_item()
+		src.Weaken(1)
 	if(pain_amount > 90 && prob(5) && src.my_stats.get_stat(STAT_HT) < 16) 
 		src.KnockDown()
-	else if(pain_amount > 90 && prob(5) && src.my_stats.get_stat(STAT_HT) >= 16) //strong people are like, strong.
+	else if(pain_amount > 90 && prob(15) && src.my_stats.get_stat(STAT_HT) >= 16) //strong people are like, strong.
 		src.Weaken(1)
 		to_chat(src, "The pain is getting worse. But I can hold on.")
 
@@ -76,6 +77,7 @@ mob/var/last_pain_message_custom = ""
 			if(1 to 10)
 				flash_weakest_pain()
 				msg = "<span class='bname'><small>My [partname] hurts.</small></span>"
+				stuttering = max(3, stuttering)
 			if(10 to 20)
 				flash_weaker_pain()
 				msg = "<span class='bname'><small>My [partname] hurts.</small></span>"
