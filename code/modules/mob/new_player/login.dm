@@ -1,10 +1,10 @@
 /var/obj/effect/lobby_image = new/obj/effect/lobby_image()
-var/interquote = pick("I hate this place and I would do anything to get out of here, may the great lord have mercy on us.",
-"All pigs must die.", "There are no angels in Heaven; they're all down here.","Build your wings on the way down.","I'm a coward, stick your knife in me.",
-"Happiness makes death a threat.","Three can keep a secret, if two of them are dead.","Conscious meat. Loving meat. Dreaming meat.",
-"Be happy that it happened, not sad that it ends","This world is a machine! A Machine for Pigs! Fit only for the slaughtering of pigs!",
-"I am begging you. You made me. You are my Creator, my Father. You cannot destroy me!","I have you now, creature. I will destroy you.",
-"It is over. It is time to end this madness.","He who makes a beast of himself removes himself from the pain of being human.")
+var/interquote = pick("Bu yerden nefret ediyorum, burdan gitmek için her şeyimi verirdim. Tanrı bize merhamet göstersin.",
+"Bütün domuzlar ölmeli.", "Cennette melek kalmadı, hepsi buraya düştü.","Kendi kanatlarımızı düşerken yaparız.","Ben bir korkağım. Bıçağını sapla bana.",
+"Ölümü tehdit yapan şey mutluluktur.","3 kişi bir sır tutabilir, ama ikisinin ölmesi gerekir.","Sen benim oyuncağımsın. Artık kaçış yok.",
+"Bittiği için üzülme, yaşandığı için mutlu ol.","Bu dünya bir makine. Domuzları katleden bir makine.",
+"Sana yalvarıyorum. Sen beni yarattın. Yaratıcım sensin. Yalvarırım Tanrım. Beni yok etme!","Artık benimsin, yaratık. Seni yok edeceğim.",
+"Her şey bitti.","Kendilerini canavarlaştıranlar, insan olmanın acısından kurtulurlar.","Beni kurtar, çıkar beni bu mezardan.","Onurunla öl.")
 /obj/effect/lobby_image
 	name = "Nearweb"
 	desc = "Theatre of pain."

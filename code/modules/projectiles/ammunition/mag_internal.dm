@@ -92,7 +92,7 @@
 	max_ammo = 0
 
 /obj/item/ammo_magazine/internal/dualshot
-	name = "double-barrel shotgun internal magazine" // Yep, this is a cylinder.
+	name = "double-barrel shotgun internal magazine" // Yep, this is a cylinder. //truly amazing
 	desc = "This doesn't even exist!"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	caliber = ".12"
