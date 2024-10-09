@@ -17,73 +17,45 @@ var/global/normal_ooc_colour = "#666699"
 	if(!msg)	return
 
 
-	if(!holder)
-		if(silenceofpigs)
-			if(!access_comrade.Find(src.ckey) && !access_villain.Find(src.ckey))
-				to_chat(src, "<span class='hitbold'>Silence, pig!</span>")
-				return
-		if(!dooc_allowed && (mob.stat == DEAD))
-			to_chat(src,"<span class='highlighttext'>OOC for dead mobs has been turned off.</span>")
-			return
-		if(prefs.muted & MUTE_OOC)
-			to_chat(src,"<span class='highlighttext'>You cannot use OOC (muted).</span>")
-			return
-		if(handle_spam_prevention(msg,MUTE_OOC))
-			return
-		if(findtext(msg, "byond://"))
-			to_chat(src,"<span class='highlighttext'><B>Stop right there criminal scum!</B></span>")
-			src << 'sound/sound_ahelp_br.ogg'
-			log_admin("[key_name(src)] has attempted to advertise in OOC: [msg]")
-			message_admins("[key_name_admin(src)] has attempted to advertise in OOC: [msg]")
-			return
-		if(findtext(msg, "OOC:"))
-			to_chat(src, "<span class='highlighttext'><B>\"OOC:\" is not required.</B></span>")
-			src << 'sound/sound_ahelp_br.ogg'
-			log_admin("[key_name(src)] has attempted to be carente in OOC: [msg]")
-			message_admins("[key_name_admin(src)] has attempted to be carente in OOC: [msg]")
-			return
-
+	
 	log_ooc("[mob.name]/[key] : [msg]")
 
 	var/display_colour = normal_ooc_colour
 	if(!holder)
-		if(ckey(src.key) in donation_mycolor)
-			display_colour = src.prefs.ooccolor
-		else
-			display_colour = normal_ooc_colour
+		display_colour = normal_ooc_colour
 	else
-		if(ckey(src.key) in donation_mycolor)
-			display_colour = src.prefs.ooccolor
-		else
-			display_colour = normal_ooc_colour
+		display_colour = normal_ooc_colour
+
 	msg = emoji_parse(msg)
 
-	if(findtext(lowertext(msg), config.ooc_filter_regex))
-		src << 'sound/vam_ban.ogg'
-		to_chat(src, "That was pretty cringe!")
-		log_admin("[key] just tried to say OOC cringe")
-		message_admins("[key] just tried to OOC say cringe")
+	//if(findtext(lowertext(msg), config.ooc_filter_regex))
+	//	src << 'sound/vam_ban.ogg'
+	//	to_chat(src, "That was pretty cringe!")
+	//	log_admin("[key] just tried to say OOC cringe")
+	//	message_admins("[key] just tried to OOC say cringe")
 		//if(!holder)
 		//	bans.Add(key)
 		//	game_remove_whitelist(reason = "Automatic ban: ([key] : [msg])")
 		//	qdel(src)
-		return
+	//	return
 
-	if(ticker.current_state == GAME_STATE_PREGAME || ticker.current_state == GAME_STATE_FINISHED || ticker.current_state == GAME_STATE_SETTING_UP)
+	if(ticker.current_state == GAME_STATE_PREGAME)// || ticker.current_state == GAME_STATE_FINISHED || ticker.current_state == GAME_STATE_SETTING_UP
 		for(var/client/C in clients)
+		
 			if(C.prefs.toggles & CHAT_OOC)
 				var/display_name = "[src.key]"
-				if(holder)
-					if(holder.fakekey)
-						if(C.holder)
-							display_name = "[holder.fakekey]/([src.key])"
-						else
-							display_name = holder.fakekey
-				if(C.holder)//Admins can see the actual ckeys.
-					if(guardianlist.Find(ckey(src.key))).
-						to_chat(C, "<span class='oocnew'><font color='[display_colour]'>⚔️<b>OOC: [display_name]: [msg]</b></font></span>")
-					else
-						to_chat(C, "<span class='oocnew'><font color='[display_colour]'><b>OOC: [display_name]: [msg]</b></font></span>")
+				//if(holder)
+					//if(holder.fakekey)
+						//if(C.holder)
+							//display_name = "[holder.fakekey]/([src.key])"
+						//else
+							//display_name = holder.fakekey
+				//if(C.holder)//Admins can see the actual ckeys.
+					//if(guardianlist.Find(ckey(src.key))).
+						//to_chat(C, "<span class='oocnew'><font color='[display_colour]'>⚔️<b>OOC: [display_name]: [msg]</b></font></span>")
+					//else
+					
+				to_chat(C, "<span class='oocnew'><font color='[display_colour]'><b>OOC: [display_name]: [msg]</b></font></span>")
 
 	if(ticker.current_state == GAME_STATE_PLAYING)
 		for(var/mob/new_player/C in player_list)
