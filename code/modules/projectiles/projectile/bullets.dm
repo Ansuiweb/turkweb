@@ -16,14 +16,14 @@
 			var/mob/living/L = target
 			shake_camera(L, 3, 2)
 
-/obj/item/projectile/bullet/weakbullet
-	damage = 25
+/obj/item/projectile/bullet/weakbullet //9mm ammo, ML-23 and stuff
+	damage = 35
 	stun = 0
 	//weaken = 2
 	embed = 0
 
 /obj/item/projectile/bullet/shotgun
-	damage = 60
+	damage = 70
 	stun = 0
 	//weaken = 0
 	agony = 40
@@ -31,28 +31,28 @@
 	embed = 1
 
 /obj/item/projectile/bullet/princess
-	damage = 55
+	damage = 80
 	stun = 0
 	weaken = 0
-	agony = 30
+	agony = 45
 	stutter = 40
-	embed = 0
+	embed = 1
 
-/obj/item/projectile/bullet/midbullet
-	damage = 65
+/obj/item/projectile/bullet/midbullet //taurus ammo
+	damage = 80
 	//weaken = 2
 	stutter = 20
 	agony = 30
 
 /obj/item/projectile/bullet/midbullet2
-	damage = 55
+	damage = 65
 	//weaken = 1
 	stutter = 20
 	agony = 20
 	icon_state = "bullet"
 
 /obj/item/projectile/bullet/duelista
-	damage = 65
+	damage = 90
 	//weaken = 5
 	stutter = 40
 	agony = 50
