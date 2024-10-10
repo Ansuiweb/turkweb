@@ -243,6 +243,14 @@ proc/strToDamageModifierItem(strength, ht)
 	if(stats[stat] < 0)
 		stats[stat] = 0
 
+/datum/stat_holder/proc/change_stat_temp(stat, amount, time)//temporarily change a stat, this might be inefficient or buggy, if so, i'll think of something later
+	if(stats[stat] != null)
+		stats[stat] += amount
+		sleep(time)
+		stats[stat] -= amount
+	if(stats[stat] < 0)
+		stats[stat] = 0
+
 /datum/stat_holder/proc/set_stat(stat, amount)
 	if(stats[stat] != null)
 		stats[stat] = amount

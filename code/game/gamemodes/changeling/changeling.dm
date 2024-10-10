@@ -43,10 +43,13 @@ var/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","Epsilon"
 	world << "<B>Our quiet night is interrupted by aliens.</B>"
 
 /datum/game_mode/changeling/can_start()
-	for(var/mob/new_player/player in player_list)
-		for(var/mob/new_player/player2 in player_list)
-			if(player.ready && player.client.work_chosen == "Baron" && player2.ready && player2.client.work_chosen == "Merchant")
-				return 1
+	if(forcestart == TRUE)
+		return 1
+	else
+		for(var/mob/new_player/player in player_list)
+			for(var/mob/new_player/player2 in player_list)
+				if(player.ready && player.client.work_chosen == "Baron" && player2.ready && player2.client.work_chosen == "Merchant")
+					return 1
 	return 0
 
 /datum/game_mode/changeling/pre_setup()

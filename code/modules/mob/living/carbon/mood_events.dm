@@ -317,6 +317,15 @@
 	description = "<span class='badmood'>• HE'S CUTTING ME OPEN!!</span>\n"
 	happiness = -8
 
+/datum/happiness_event/ripper_dissect
+	description = "<span class='goodmood'>I just cut someone open... I feel... Almost alive...</span>\n"
+	happiness = 25
+	timeout = 3000 //5 minutes, change this if its too low
+
+/datum/happiness_event/ripper_hasnt_dissected
+	description = "<span class='badmood'>I have to see human innards. I need to feel again...</span>\n"
+	happiness = -25
+
 //MISC
 
 /datum/happiness_event/misc/sheriff
