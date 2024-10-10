@@ -3,6 +3,7 @@ var/global/BSACooldown = 0
 var/global/floorIsLava = 0
 var/global/log_adminsay = 1
 
+var/global/forcestart = FALSE
 
 ////////////////////////////////
 /proc/message_admins(var/msg)
@@ -748,17 +749,18 @@ var/global/log_adminsay = 1
 	set category = "Server"
 	set desc="Start the round RIGHT NOW"
 	set name="Start Now"
-	if(!ticker)
-		alert("Unable to start the game as it is not set up.")
-		return
-	if(ticker.current_state == GAME_STATE_PREGAME)
-		ticker.current_state = GAME_STATE_SETTING_UP
-		log_admin("[usr.key] has started the game.")
-		message_admins("<font color='blue'>[usr.key] has started the game (master_mode: [master_mode]).</font>")
-		return 1
-	else
-		to_chat(usr, "<font color='red'>Error: Start Now: Game has already started.</font>")
-		return 0
+	//if(!ticker)
+	//	alert("Unable to start the game as it is not set up.")
+	//	return
+	//if(ticker.current_state == GAME_STATE_PREGAME)
+	forcestart = TRUE
+	ticker.current_state = GAME_STATE_PLAYING
+	log_admin("[usr.key] has started the game.")
+	message_admins("<font color='blue'>[usr.key] has started the game (master_mode: [master_mode]).</font>")
+//		return 1
+//	else
+//		to_chat(usr, "<font color='red'>Error: Start Now: Game has already started.</font>")
+//		return 0
 
 /datum/admins/proc/toggleenter()
 	set category = "Server"

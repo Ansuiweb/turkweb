@@ -11,10 +11,13 @@
 	recommended_enemies = 1
 
 /datum/game_mode/dreamer/can_start()
-	for(var/mob/new_player/player in player_list)
-		for(var/mob/new_player/player2 in player_list)
-			if(player.ready && player.client.work_chosen == "Baron" && player2.ready && player2.client.work_chosen == "Merchant")
-				return 1
+	if(forcestart == TRUE)
+		return 1
+	else
+		for(var/mob/new_player/player in player_list)
+			for(var/mob/new_player/player2 in player_list)
+				if(player.ready && player.client.work_chosen == "Baron" && player2.ready && player2.client.work_chosen == "Merchant")
+					return 1
 	return 0
 /datum/game_mode/proc/greet_dreamer(datum/mind/dreamer)
 	//ticker.mode.learn_basic_spells(current)

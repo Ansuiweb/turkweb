@@ -15,10 +15,13 @@
 		to_chat(world, "<span class='baronboldoutlined'>One of the Tiamatii is a traitor!</span> <span class='baron'>Rumors about the turncoat have tormented the fortress for weeks, but the villain`s identity has yet to be uncovered.</span>")
 
 /datum/game_mode/traitcerb/can_start()
-	for(var/mob/new_player/player in player_list)
-		for(var/mob/new_player/player2 in player_list)
-			if(player.ready && player.client.work_chosen == "Baron" && player2.ready && player2.client.work_chosen == "Merchant")
-				return 1
+	if(forcestart == TRUE)
+		return 1
+	else
+		for(var/mob/new_player/player in player_list)
+			for(var/mob/new_player/player2 in player_list)
+				if(player.ready && player.client.work_chosen == "Baron" && player2.ready && player2.client.work_chosen == "Merchant")
+					return 1
 	return 0
 
 /datum/game_mode/proc/greet_cerb(var/datum/mind/traitorcerb)
