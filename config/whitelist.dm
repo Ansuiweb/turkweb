@@ -89,18 +89,15 @@ var/datum/storyholder/story_holder = new
 		hasinvited.Add(ckey(line))
 
 /proc/load_comrade_list()
-    set waitfor = FALSE // Set waitfor to false to avoid blocking
-    access_comrade.Cut() // Clear the current comrade list
-    // Load text from file
-    var/list/Lines = file2list("config/access_comrade.txt")
-    // Process each line separately
-    for(var/line in Lines)
-        if(!length(line))                continue // Skip empty lines
-        if(copytext(line, 1, 2) == "#") continue // Skip comments
-
-        // Add the ckey to the comrade list
-        var/ckey = ckey(line)
-        access_comrade.Add(ckey)
+	set waitfor = FALSE
+	if(!establish_db_connection())
+		return
+	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM access_comrade;")
+	if(!query.Execute())
+		world.log << query.ErrorMsg()
+		return
+	while(query.NextRow())
+		access_comrade.Add(query.item[1])
 
 /proc/load_pigplus_list()
 	set waitfor = FALSE
