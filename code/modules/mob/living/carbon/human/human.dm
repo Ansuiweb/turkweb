@@ -940,6 +940,13 @@
 	return
 
 /mob/living/carbon/human/proc/do_vomit()
+
+	if(src.grabbed_by.len)
+		for(var/obj/item/grab/G in src)
+			if(G.aforgan == src.get_organ("mouth"))
+				to_chat(src, "<spawn class='pukes'>You tried to puke, but there is a hand holding your mouth")
+				return
+			
 	if(is_dreamer(src))
 		return
 	if(!src.reagents || src.nutrition <= 80)
@@ -970,6 +977,12 @@
 
 	if(is_dreamer(src))
 		return
+	
+	if(src.grabbed_by.len)
+		for(var/obj/item/grab/G in src)
+			if(G.aforgan == src.get_organ("mouth"))
+				to_chat(src, "<spawn class='pukes'>You tried to puke, but there is a hand holding your mouth")
+				return
 
 	if(!lastpuke)
 		lastpuke = 1
@@ -1736,16 +1749,27 @@
 					looking_up = FALSE
 					src.reset_view()
 
-/mob/living/carbon/human/verb/hidee()
+/mob/living/carbon/human/verb/hidee(var/turf/T)
 	set name = "Hide"
 	set desc = "If you want to hide from enemies."
 	set category = "IC"
 
+	T = loc
 	if(isturf(loc))
-		var/turf/T = loc
-		if(T.get_lumcount() <= 0.2)
-			src.alpha = 70
-			hasalpha = 1
+		if(src.my_skills.get_skill(SKILL_SNEAK) > 10)
+			if(T.get_lumcount() <= 0.5)
+				src.alpha = 25
+				hasalpha = 1
+				to_chat(src, "<span class='passive'>You hide masterfully.</span>")
+			else
+				to_chat(src, "<span class='passive'>It's too bright here!</span>")
+		else
+			if(T.get_lumcount() <= 0.3)
+				to_chat(src, "<span class='passive'>You try and hold your breath, covering in fear.</span>")
+				src.alpha = 60
+				hasalpha = 1
+			else
+				to_chat(src, "<span class='passive'>It's too bright here!</span>")
 
 /mob/proc/do_zoom()
 	var/do_normal_zoom = TRUE

@@ -329,9 +329,11 @@ emp_act
 		return
 
 	if(user == src)//nao da pra se roubar
+		to_chat(user, "<span class='combatbold'>[pick(fnord)] I can't steal from myself!</span>")
 		return
 
 	if(user.get_active_hand() != null) //nao da pra roubar com a mão cheia
+		to_chat(user, "<span class='combatbold'>[pick(fnord)] I can't steal with something else in my hand!</span>")
 		return
 	if(src.combat_mode)
 		to_chat(user, "<span class='combatbold'>[pick(fnord)] They're aware!</span>")

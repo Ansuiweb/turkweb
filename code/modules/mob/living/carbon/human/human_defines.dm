@@ -112,6 +112,13 @@
 	var/list/donationsUsed = list()
 	///////////////////////////////////////
 
+	//sk stuff
+	var/is_murderer = FALSE
+	var/knife_picked = FALSE
+	var/mask_picked = FALSE
+	var/gloves_picked = FALSE
+	//this is inefficient and dumb, but so is this entire fucking codebase so, don't question it that much
+
 	var/footstep = 1
 	var/isrev = FALSE
 	var/migclass = null
@@ -203,3 +210,5 @@
 	default_buttons = list("verbs","emotes","craft")
 // OTHER SHIT
 	var/dreamerArchetype
+	var/serialkillerArchetype
+	var/skbool = FALSE

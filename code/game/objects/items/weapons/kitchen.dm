@@ -136,7 +136,7 @@
 	desc = "Can cut through any food, and some people too."
 	icon_state = "knife"
 	item_state = "knife"
-	blood_suffix = "b"
+	blood_suffix = "_blood"
 	force = 13
 	throwforce = 15.0
 	sharp = 1
@@ -153,8 +153,8 @@
 	var/atk_mode = SLASH
 
 /obj/item/kitchen/utensil/knife/switchblade
-	blooded_icon = FALSE
-	blood_suffix = "b"
+	blooded_icon = TRUE
+	blood_suffix = "_blood"
 	name = "switch blade"
 	desc = "Can cut through any throat."
 	icon_state = "switchblade0"
@@ -193,7 +193,7 @@
 		to_chat(user, "You will now stab.")
 		edge = 1
 		sharp = 0
-		attack_verb = list("stabs")
+		attack_verb = list("stabs", "thrusts")
 		hitsound = "stab"
 		return
 
@@ -202,7 +202,7 @@
 		to_chat(user, "You will now slash.")
 		edge = 0
 		sharp = 1
-		attack_verb = list("hits", "clubs")
+		attack_verb = list("slashes", "cuts")
 		hitsound = initial(hitsound)
 		return
 
@@ -261,11 +261,29 @@
 /obj/item/weapon/kitchen/utensil/knife/theknife
 	name = "The Knife"
 	icon = 'icons/obj/weapons.dmi'
-	icon_state = "combat"
+	icon_state = "combat2"
 	item_state = "the_knife"
-	desc = "A very sharp looking knife..."
+	desc = ""
 	force = 24
 	throwforce = 12
+	sharp = 1
+	edge = 1
+	drawsound = "unsheath"
+	drop_sound = 'sound/effects/drop_sword.ogg'
+	penetrating = TRUE
+	item_worth = 140
+	hitsound= "blade"
+	sheathiconknife = "combat_sh2"
+	equip_sound = "sheath"
+
+/obj/item/weapon/kitchen/utensil/knife/murderer
+	name = "Old Knife"
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "combat"
+	item_state = "the_knife"
+	desc = "Has dust engraved into the blade. Still sharp."
+	force = 26
+	throwforce = 20
 	sharp = 1
 	edge = 1
 	drawsound = "unsheath"
@@ -319,6 +337,7 @@
 	sharp = 1
 	edge = 0
 	penetrating = TRUE
+	embed = TRUE
 	drop_sound = 'sound/weapons/knife_drop.ogg'
 	drawsound = 'sound/weapons/dagger_draw.ogg'
 	item_worth = 7

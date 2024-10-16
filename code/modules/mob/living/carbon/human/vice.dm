@@ -115,10 +115,24 @@
 	vice_chems  = list(/datum/reagent/cocaine,/datum/reagent/mdma,/datum/reagent/changa)
 	withdraw_event = /datum/happiness_event/vice/stimulants
 
+//serial killer vices here
+
+/datum/vice/ripper
+	name = "Dissecting"
+	withdrawal_msg = "I need to gut them."
+	withdraw_event = /datum/happiness_event/vice/dissecting
+
+/datum/vice/mutilator
+	name = "Mutilating"
+	withdrawal_msg = "How beautiful their faces would look, only if I could have a touch at it."
+	withdraw_event = /datum/happiness_event/vice/dissecting
 
 /mob/living/carbon/human/proc/handle_vice()
 	if(vice)
 		if(viceneed < 1000)
+			if(src.vice == "Dissecting")
+				spawn(8)
+				viceneed += rand(3, 5)
 			spawn(10)
 				viceneed += rand(1,2)
 				clear_event("vice")
@@ -128,11 +142,18 @@
 
 	if(viceneed >= 1000)
 		if(src.vice)
-			vice.add_event(src)
+			if(src.vice == "Dissecting")
+				src.add_event(/datum/vice/ripper, /datum/happiness_event/vice/dissecting)
+				if(prob(1))
+					to_chat(src, "<br><span class='graytextbold'>⠀+ I need to gut them. +</span><br>")
+			else
+				src.add_event(src)
 			if(sleeping) return
 
 			if(prob(1))
 				to_chat(src, "<br><span class='graytextbold'>⠀+ [vice.withdrawal_msg] +</span><br>")
+	if(viceneed < 0)
+		viceneed = 0
 
 /mob/living/carbon/human/proc/handle_reflect()
 	if(can_reflect == FALSE)

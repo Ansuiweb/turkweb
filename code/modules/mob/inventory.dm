@@ -66,14 +66,18 @@
 //Puts the item into our active hand if possible. returns 1 on success.
 /mob/proc/put_in_active_hand(var/obj/item/W)
 	hud_used?.add_inventory_overlay()
-	if(hand)	return put_in_l_hand(W)
-	else		return put_in_r_hand(W)
+	if(hand)
+		return put_in_l_hand(W)
+	else
+		return put_in_r_hand(W)
 
 //Puts the item into our inactive hand if possible. returns 1 on success.
 /mob/proc/put_in_inactive_hand(var/obj/item/W)
 	hud_used.add_inventory_overlay()
-	if(hand)	return put_in_r_hand(W)
-	else		return put_in_l_hand(W)
+	if(hand)
+		return put_in_r_hand(W)
+	else
+		return put_in_l_hand(W)
 
 /mob/proc/vamp_check(var/obj/item/W)
 	if(!ishuman(src))
