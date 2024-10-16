@@ -5,6 +5,7 @@
 /obj/item/storage/touchable/organ
 	name = "organ storage"
 	var/mob/living/carbon/human/owner
+	var/gotten_out_once = FALSE
 
 /obj/item/storage/touchable/organ/New()
 	..()

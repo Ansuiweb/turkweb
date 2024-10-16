@@ -430,10 +430,18 @@
 	user.put_in_active_hand(O)
 	qdel(src)
 
+//turkic code ignore
+
+
 /obj/item/reagent_containers/food/snacks/organ/on_exit_storage(obj/item/storage/S as obj, var/new_location)
 	if(ismob(new_location) && istype(S, /obj/item/storage/touchable/organ))
-		var/mob/M = new_location
+		var/mob/living/carbon/human/H = new_location
 		var/datum/organ/internal/heart/Heart = src.owner.internal_organs_by_name[pick("heart")]
+		if(H.vice == "Dissecting")//serialkiller vice
+			if(src.organ_data.gotten_out_once == FALSE)
+				src.organ_data.gotten_out_once = TRUE
+				H.viceneed -= 100
+				to_chat(H, pick(serialkiller_satisfaction_lines))
 		if(Heart && Heart.escritura)
 			if(istype(src, /obj/item/reagent_containers/food/snacks/organ/heart))
 				src.escritura = Heart.escritura
@@ -442,13 +450,16 @@
 			src.organ_data.damage += 60
 			health -= 60
 			connected = FALSE
-		var/damage_organ = rand(30, 40)
+		var/damage_organ = rand(5, 20)
 		src.organ_data.damage += damage_organ
 		health -= damage_organ
-		src.removed(src.owner, M)
-		M.visible_message("[M] exhumes [src.owner]!")
-		playsound(M.loc, pick('sound/lfwbsounds/itm_ingredient_heart_01.ogg', 'sound/lfwbsounds/itm_ingredient_heart_02.ogg'), 100)
+		src.removed(src.owner, H)
+		H.visible_message("[H] exhumes [src.owner]!")
+		playsound(H.loc, pick('sound/lfwbsounds/itm_ingredient_heart_01.ogg', 'sound/lfwbsounds/itm_ingredient_heart_02.ogg'), 100)
 		processing_objects.Add(src)
+		//to_chat(H, pick(serialkiller_satisfaction_lines))
+
+
 		return 1
 	else if(istype(S, /obj/item/storage/touchable/organ))
 		var/datum/organ/internal/heart/Heart = src.owner.internal_organs_by_name[pick("heart")]

@@ -41,7 +41,7 @@ and set its desc to what you want the verb to appear as in the statpanel.
 		spawn(10)
 			init_panel()
 		return
-	var/list/buttons = list("craft","verb","emotes","gpc","cross","crown","fangs","dead","villain")
+	var/list/buttons = list("craft","verb","emotes","gpc","cross","crown","fangs","murderer","dead","villain")
 	for(var/button in buttons)
 		html_verbs.Remove(button)
 	mob.updateStatPanel()
@@ -167,7 +167,7 @@ and set its desc to what you want the verb to appear as in the statpanel.
 	if(!client.statpanel_loaded)
 		return
 
-	var/list/buttons = list("options","chrome","verbs","emotes","fangs","dead","craft","gpc","cross","crown","villain","thanati")
+	var/list/buttons = list("options","chrome","verbs","emotes","fangs","murderer","dead","craft","gpc","cross","crown","villain","thanati")
 	var/list/no_draw = list("options","chrome")
 	var/list/new_default_buttons = default_buttons  + no_draw
 	var/pixelDistancing = 46

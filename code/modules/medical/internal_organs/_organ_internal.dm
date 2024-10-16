@@ -20,6 +20,7 @@
 	var/list/transplant_data
 	var/damagelevel = 1
 	var/stopped_working = 0// for heart attacks and etc
+	var/gotten_out_once = FALSE
 
 
 /datum/organ/internal/proc/rejuvenate()

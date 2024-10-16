@@ -48,6 +48,8 @@
 		text += "<a href='#' id='ReflectExperience'>Reflect your Experience!<br></a>"
 	if(is_dreamer(src) || src.verbs.Find(/mob/living/carbon/human/proc/dreamerArchetypes))
 		text += "<a href='#' id='dreamerArchetypes'>Dreamer Archetypes<br></a>"
+	//if(src.verbs.Find(/mob/living/carbon/human/proc/serialkillerArchetypes))//is_murderer(src) || 
+	//	text += "<a href='#' id='serialkillerArchetypes'>Your Path<br></a>"
 	if(src?.mind?.succubus)
 		text += "<a href='#' id='teleportSlaves'>Teleport Slaves<br></a><a href='#' id='punishSlave'>Punish Slave<br></a> <a href='#' id='killSlave'>Kill Slave<br></a>"
 	if(src.verbs.Find(/mob/living/carbon/human/proc/plantEgg))
@@ -190,6 +192,9 @@
 		buttonTimes++;
 		buttonHTML += "<a href=\"#\"><div style=\"background-image: url(\'GPC.png\'); margin-top: -50px; margin-left:[pixelDistancing * buttonTimes]px; \" id=\"GPC\" class=\"button\" /></div></a>"
 
+		if(H.is_murderer)
+			buttonTimes++;
+			buttonHTML += "<a href=\"#\"><div style=\"background-image: url(\'Plot.png\'); margin-top: -50px; margin-left:[pixelDistancing * buttonTimes]px; \" id=\"Murderer\" class=\"button\" /></div></a>"
 		if(H.isVampire)
 			buttonTimes++;
 			buttonHTML += "<a href=\"#\"><div style=\"background-image: url(\'Fangs.png\'); margin-top: -50px; margin-left:[pixelDistancing * buttonTimes]px; \" id=\"Vampire\" class=\"button\" /></div></a>"
@@ -251,6 +256,7 @@
 	client.changebuttoncontent("#DeadGhost", {"<span class='segment1'>[generateVerbList(list(list("Wraith", "Wraith"), list("Ascend", "Ascend"), list("LateParty", "Late Party"), list("ToggleDarkness", "Shroud Thickness"), list("GotoHell", "Go to Hell"), list("Jaunt", "(5) Jaunt"), list("GrueSpawn", "(15) Grue"), list("Ignition", "(30) Ignition"), list("InterveneDreams", "Intervene Dreams"), list("ReenterCorpse", "Re-enter Corpse")))]</span>"})
 	client.changebuttoncontent("#Dead", {"<span class='segment1'>[generateVerbList(list(list("Wraith", "Wraith")))]</span>"})
 
+	client.changebuttoncontent("#Murderer", {"<span class='segment1'>[generateVerbList(list(list("serialkillerArchetypes", "What am I?")))]</span>"})
 	client.changebuttoncontent("#Vampire", {"<span class='segment1'>[generateVerbList(list(list("ExposeFangs", "Expose Fangs"), list("BloodStrength", "Blood Strength (50cl)"), list("Fortitude", "Fortitude (50cl)"), list("Heal", "Heal (150cl)"), list("Celerety", "Celerety (250cl)"), list("DeadEyes", "Dead Eyes")))]</span>"})
 	client.changebuttoncontent("#Advisor", {"<span class='segment1'>[generateVerbList(list(list("gradeHygiene", "Grade the Hygiene"), list("gradePeople", "Grade the People"), list("gradeFortress", "Grade the Fortress")))]</span>"})
 	client.changebuttoncontent("#Bodyguard", {"<span class='segment1'>[generateVerbList(list(list("localizeAdvisor", "Localize Advisor")))]</span>"})
@@ -301,7 +307,6 @@
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
 		//verbs += list(list("RememberTheTerrain", "Remember the Terrain")) //This verb does nothing. TODO: make this verb do... something...
-
 		if(is_dreamer(H))
 			verbs += list(list("Wonders", "Wonders"), list("dreamerArchetypes", "Dreamer Archetypes"))
 		if(H.reflectneed >= 750)
@@ -360,6 +365,8 @@
 
 		if(H.verbs.Find(/mob/living/carbon/human/proc/interrogate))
 			verbs += list(list("Interrogate", "Interrogate"))
+		if(is_murderer(H))
+			verbs += list(list("serialkillerArchetypes", "What am I?"))
 
 	newOption = generateVerbList(verbs)
 	return {"<span class='segment1'>[newOption]</span>"}

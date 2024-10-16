@@ -57,6 +57,8 @@
 
 		if(is_dreamer(H))
 			S = sound('sound/lfwbsounds/bloodlust1.ogg', repeat = 1, wait = 0, volume = src?.client?.prefs?.music_volume, channel = 12)
+		else if(is_murderer(H))
+			S = sound('sound/music/heartbeat.ogg', repeat = 1, wait = 0, volume = 355, channel = 12)
 		else if(H.religion == "Thanati")
 			S = sound('sound/fortress_suspense/suspense_thanati.ogg', repeat = 1, wait = 0, volume = src?.client?.prefs?.music_volume, channel = 12)
 		else if(H.job == "Jester")

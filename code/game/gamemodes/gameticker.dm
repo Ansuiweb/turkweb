@@ -139,9 +139,9 @@ var/turf/MiniSpawn
 					if((player_count >= HARD_MODE_PLAYER_CAP) && prob (50))
 						master_mode = list("kingwill", "siege")
 					else if(prob(85))
-						var/list/gamemodes = list("changeling", "dreamer", "succubus")
-						if(prob(20))
-							gamemodes.Add("inspector") // this is so boring... im sorry
+						var/list/gamemodes = list("serialkiller","changeling")// "dreamer", "succubus")
+						//if(prob(20))
+							//gamemodes.Add("inspector") // this shit sucks. -amnotakidnapper
 						master_mode = pick(gamemodes)
 					else
 						master_mode = "quietday"
@@ -277,7 +277,7 @@ var/turf/MiniSpawn
 		announce_events()
 		apply_events()
 		world << sound('sound/AI/welcome.ogg') // Skie
-		ooc_allowed = FALSE
+		ooc_allowed = TRUE
 	//new random event system is handled from the MC.
 
 	supply_shuttle.process() 		//Start the supply shuttle regenerating points -- TLE

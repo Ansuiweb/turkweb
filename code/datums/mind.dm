@@ -512,6 +512,24 @@ datum/mind
 					H.verbs += /mob/living/carbon/human/proc/dreamer
 					H.verbs += /mob/living/carbon/human/proc/dreamerArchetypes
 
+		else if (href_list["murderer"])
+			switch(href_list["murderer"])
+				if("murderer")
+					var/mob/living/carbon/human/H = current
+					special_role = "Murderer"
+					//ticker.mode.learn_basic_spells(current)
+					log_admin("[key_name_admin(usr)] maddened [current].")
+					H.combat_music = 'sound/music/lsod.ogg'
+					var/datum/antagonist/serialkiller/D = new()
+					H.mind.antag_datums = D
+					H.my_skills.change_skill(SKILL_MELEE, 17)
+					H.my_skills.change_skill(SKILL_RANGE, 0)
+					H.my_stats.change_stat(STAT_ST , 2)
+					H.my_stats.change_stat(STAT_DX , 2)
+					H.my_stats.change_stat(STAT_HT , 5)
+					H.verbs += /mob/living/carbon/human/proc/serialkiller
+					H.verbs += /mob/living/carbon/human/proc/serialkillerArchetypes
+
 		else if (href_list["soulbreaker"])
 			switch(href_list["soulbreaker"])
 				if("soulbreaker")
@@ -819,6 +837,13 @@ datum/mind
 			special_role = "Waker"
 			ticker.mode.finalize_dreamer(src)
 			ticker.mode.greet_dreamer(src)
+	
+	proc/make_Killer()
+		if(!(src in ticker.mode.serialkiller))
+			ticker.mode.serialkiller += src
+			special_role = "Murderer"
+			ticker.mode.finalize_serialkiller(src)
+			ticker.mode.serialkiller_greeting(src)
 
 	proc/make_They()
 		if(!(src in ticker.mode.changelings))

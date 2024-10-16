@@ -318,9 +318,9 @@
 	happiness = -8
 
 /datum/happiness_event/ripper_dissect
-	description = "<span class='goodmood'>I just cut someone open... I feel... Almost alive...</span>\n"
-	happiness = 25
-	timeout = 3000 //5 minutes, change this if its too low
+	description = "<span class='goodmood'>I can't stop looking at it!</span>\n"
+	happiness = 5
+	timeout = 1200 //2 minutes, change this if its too low
 
 /datum/happiness_event/ripper_hasnt_dissected
 	description = "<span class='badmood'>I have to see human innards. I need to feel again...</span>\n"
@@ -440,6 +440,10 @@
 /datum/happiness_event/wonder
 	description = "<span class='badmood'>• I've seen something nightmarish. I'm afraid for my life.</span>\n"
 	happiness = -18
+
+/datum/happiness_event/vice/dissecting
+	description = "<span class='badmood'>• I need to gut them.</span>\n"
+	happiness = -20
 
 //Song
 /datum/happiness_event/song/perfect

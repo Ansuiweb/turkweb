@@ -327,7 +327,7 @@
 		var/datum/organ/external/mouth/M = src
 		if(M.knock_out_teeth(get_dir(pick(cardinal), src), round(rand(28, 38) * ((rand(0, 9)*2)/100))))
 			owner.visible_message("<span class='crithit'>[owner]'s teeth sail off in an arc!</span>")
-			//owner.receive_damage()
+			owner.receive_damage()
 
 	if(istype(src, /datum/organ/external/vitals) && edge)
 		var/datum/organ/external/vitals/V = src
@@ -361,13 +361,18 @@
 				dmgTXT += "<span class='combatbold'>The skull breaks with a sickening cracking sound!</span> "
 				if(!iszombie(src) && !ismonster(src))
 					for(var/mob/living/carbon/human/HHH in range(src,7))
-						if(!HHH.terriblethings)
-							HHH.add_event("terriblething", /datum/happiness_event/disgust/terriblethings)
-						if(HHH.has_vice("Sensitivity"))
-							if(prob(80))
-								HHH.vomit()
+						if(!HHH.has_vice("Mutilating"))
+							if(!HHH.terriblethings)
+								HHH.add_event("terriblething", /datum/happiness_event/disgust/terriblethings)
+							if(HHH.has_vice("Sensitivity"))
 								if(prob(80))
-									HHH.emote(pick("scream","cry"))
+									HHH.vomit()
+									if(prob(80))
+										HHH.emote(pick("scream","cry"))
+						else
+							HHH.viceneed -= 350
+							to_chat(HHH, pick(serialkiller_satisfaction_lines))
+							
 				if(prob(55))
 					owner.visible_message("<span class='hitbold'[name]</span> <span class='hit'>starts having a seizure!</span>")
 					owner.Paralyse(10)

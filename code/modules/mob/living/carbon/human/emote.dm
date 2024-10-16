@@ -1276,13 +1276,13 @@
 	var/oldpixely = pixel_y
 	while(dancing)
 		var/pixely = rand(5, 6)
-		animate(src, pixel_y = pixely, time = 0.5)
+		animate(src, pixel_y = pixely, time = 1)
 		sleep(1)
-		animate(src, pixel_y = oldpixely, time = 0.7)
+		animate(src, pixel_y = oldpixely, time = 0.75)
 		sleep(2)
-		animate(src, pixel_y = 2, time = 0.2)
+		animate(src, pixel_y = 2, time = 0.6)
 		sleep(1)
-		animate(src, pixel_y = oldpixely, time = 0.2)
+		animate(src, pixel_y = oldpixely, time = 0.6)
 		if(resting || lying)
 			dancing = 0
 

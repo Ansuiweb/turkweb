@@ -28,6 +28,7 @@
 		return
 	if(pickeditem)
 		spawn_item(pickeditem, H)
+
 		itemstake = list()
 	..()
 
@@ -72,6 +73,19 @@
 			else
 				itemstake.Add("*Dreamer's Diary*")
 				itemstake.Add("*Dreamer's Pen*")
+	if(is_murderer(H))
+		switch(H.serialkillerArchetype)
+			if("The Ripper")
+				if(H.knife_picked==FALSE)
+					itemstake.Add("*My Friend*")
+				if(H.gloves_picked==FALSE)
+					itemstake.Add("*My Hands*")
+				if(H.mask_picked==FALSE)
+					itemstake.Add("*My Face*")
+			else
+				itemstake.Add("*My Friend*")
+				itemstake.Add("*My Hands*")		
+				itemstake.Add("*My Face*")	
 	if(H.special)
 		if(H.special_item)
 			itemstake.Add("*Special*")
@@ -125,10 +139,25 @@
 				receiver.pjack_item = TRUE
 		if("*Amulet of Lechery*")
 			spawnitem = /obj/item/clothing/head/amulet/lechery
-		if("*The Knife*")
-			if(amount_chasers_gear1)
-				spawnitem = /obj/item/weapon/kitchen/utensil/knife/theknife
-				amount_chasers_gear1 = 0
+		if("*My Friend*")
+			if(receiver.knife_picked==FALSE)
+				spawnitem = /obj/item/kitchen/utensil/knife/dagger
+				receiver.knife_picked = TRUE
+				itemstake.Remove("*My Friend*")
+		if("*My Hands*")
+			if(receiver.gloves_picked==FALSE)
+				spawnitem = /obj/item/clothing/gloves/botanic_leather
+				receiver.gloves_picked = TRUE
+				itemstake.Remove("*My Hands*")
+		if("*My Face*")
+			if(receiver.mask_picked==FALSE)
+				spawnitem = /obj/item/clothing/mask/balaclava
+				receiver.mask_picked = TRUE
+				itemstake.Remove("*My Face*")
+		//if("*My Friend*")
+		//	if(amount_chasers_gear1)
+		//		spawnitem = /obj/item/weapon/kitchen/utensil/knife/theknife
+		//		amount_chasers_gear1 = 0
 		if("*The Costume*")
 			if(amount_chasers_gear2)
 				spawnitem = /obj/item/clothing/suit/chaser
@@ -155,7 +184,7 @@
 	}
 	receiver.donationsUsed += spawnitem
 	var/obj/item/W = new spawnitem(receiver.loc)
-	receiver.put_in_active_hand(spawnitem)
+	receiver.put_in_active_hand(W)
 	if(spawnitem == /obj/item/device/cellphone)
 		var/obj/item/device/cellphone/C = W
 		var/obj/item/device/rim_card/R = new()
