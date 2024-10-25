@@ -88,15 +88,6 @@ var/datum/storyholder/story_holder = new
 
 		hasinvited.Add(ckey(line))
 
-var/dbcon // Global db
-
-/proc/initialize_db()
-    if(!establish_db_connection())
-        world.log << "Veritabanı bağlantısı kurulamadı!"
-        return FALSE
-    dbcon = establish_db_connection()
-    return TRUE
-
 /proc/load_comrade_list()
     set waitfor = FALSE
     if(!dbcon && !initialize_db())
