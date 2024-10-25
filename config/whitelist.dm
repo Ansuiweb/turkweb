@@ -90,6 +90,8 @@ var/datum/storyholder/story_holder = new
 
 /proc/load_comrade_list()
 	set waitfor = FALSE
+	if(!establish_db_connection())
+		return
 	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM access_comrade;")
 	if(!query.Execute())
 		world.log << query.ErrorMsg()
@@ -99,6 +101,8 @@ var/datum/storyholder/story_holder = new
 
 /proc/load_pigplus_list()
 	set waitfor = FALSE
+	if(!establish_db_connection())
+		return
 	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM access_pigplus;")
 	if(!query.Execute())
 		world.log << query.ErrorMsg()
