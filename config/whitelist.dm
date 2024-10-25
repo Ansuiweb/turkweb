@@ -88,27 +88,36 @@ var/datum/storyholder/story_holder = new
 
 		hasinvited.Add(ckey(line))
 
+var/dbcon // Global db
+
+/proc/initialize_db()
+    if(!establish_db_connection())
+        world.log << "Veritabanı bağlantısı kurulamadı!"
+        return FALSE
+    dbcon = establish_db_connection()
+    return TRUE
+
 /proc/load_comrade_list()
-	set waitfor = FALSE
-	if(!establish_db_connection())
-		return
-	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM access_comrade;")
-	if(!query.Execute())
-		world.log << query.ErrorMsg()
-		return
-	while(query.NextRow())
-		access_comrade.Add(query.item[1])
+    set waitfor = FALSE
+    if(!dbcon && !initialize_db())
+        return
+    var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM access_comrade;")
+    if(!query.Execute())
+        world.log << query.ErrorMsg()
+        return
+    while(query.NextRow())
+        access_comrade.Add(query.item[1])
 
 /proc/load_pigplus_list()
-	set waitfor = FALSE
-	if(!establish_db_connection())
-		return
-	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM access_pigplus;")
-	if(!query.Execute())
-		world.log << query.ErrorMsg()
-		return
-	while(query.NextRow())
-		access_pigplus.Add(query.item[1])
+    set waitfor = FALSE
+    if(!dbcon && !initialize_db())
+        return
+    var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM access_pigplus;")
+    if(!query.Execute())
+        world.log << query.ErrorMsg()
+        return
+    while(query.NextRow())
+        access_pigplus.Add(query.item[1])
 
 /proc/load_villain_list()
 	set waitfor = FALSE
